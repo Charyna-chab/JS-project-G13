@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customize</title>
     <link rel="stylesheet" href="CSS/customize.css">
+    <script src="JS/customize.js"defer></script>
 </head>
 <body>
     <nav class="navbar">
@@ -26,19 +27,44 @@
         </div>
     </nav>
     <div class="container">
-        <h1>What would you like to do?</h1>
-        <div class="content">
+        <h1 id="title-category">What would you like to do?</h1>
+        <div class="content" id="content-1">
             <div class="card">
                 <img src="cus-image/1.png" alt="">
                 <h2>Make a Quiz</h2>
                 <p>Create your own custom quiz in minutes</p>
             </div>
-            <div class="card">
+            <div class="card" id="play-quiz">
                 <img src="cus-image/2.png" alt="">
                 <h2>Play Quiz</h2>
                 <p>Play quiz by choose topic</p>
             </div>
         </div>
+        <div class="subjects" id="types-subject"  style="display:none;">
+            <h1>Types of subjects</h1>
+            <div class="card-type" id="types-subject">
+                <div class="card-subject">
+                    <img src="cus-image/html5.png" alt="">
+                    <h2>HTML</h2>
+                </div>
+                <div class="card-subject">
+                    <img src="cus-image/css3.png" alt="">
+                    <h2>CSS</h2>
+                </div>
+            </div>
+            <div class="card-type">
+                <div class="card-subject">
+                    <img src="cus-image/english.png" alt="">
+                    <h2>ENGLISH</h2>
+                </div>
+                <div class="card-subject">
+                    <img src="cus-image/fun.png" alt="">
+                    <h2>FUN</h2>
+                </div>
+            </div>
+           <button id="btn">Back</button>
+        </div>
+    </div>
     </div>
     
 </body>
