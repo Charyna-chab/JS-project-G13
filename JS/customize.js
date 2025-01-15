@@ -15,3 +15,11 @@ button.addEventListener('click',(e) =>{
     content.style.display = "flex";
     titleCategory.style.display = "block";
 })
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> 015706cfcaf0fc585011f22b225181767893def5

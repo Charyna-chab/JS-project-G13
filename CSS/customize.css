@@ -73,7 +73,7 @@ h1{
     color: white;
 }
 .content{
-    display: flex;
+    display:flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -95,6 +95,10 @@ h1{
     transition: 0.7s;
     
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 015706cfcaf0fc585011f22b225181767893def5
 /* create card subject for choose */
 .subjects{
     text-align: center;    
@@ -132,4 +136,8 @@ button{
     border-radius: 20px;
     cursor: pointer;
     background-color: #FFD000;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 015706cfcaf0fc585011f22b225181767893def5
