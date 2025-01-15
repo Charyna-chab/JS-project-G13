@@ -1,17 +1,79 @@
 body{
+    margin: 0;
+    padding: 0;
     /* background:linear-gradient(#003A67,#0D66AC); */
     background-color: #003A67;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+/* create navbar  */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #00223C;
+}
+.nav-left {
+    width: 30%;
+}
+.nav-left .logo img {
+    height: 40px;
+}
+
+.nav-right {
+    display: flex;
+    width: 70%;
+    justify-content: flex-end;
+    align-items: center;
+}
+.nav-right ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-right li {
+    margin: 0 15px;
+}
+
+.nav-right li a {
+    text-decoration: none;
+    color: #FFD000;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    gap: 50px;
+}
+
+.nav-right li a i {
+    margin-right: 8px;
+}
+
+.nav-right li a.active:hover {
+    color: white;
+}
+
+.nav-right button {
+    padding: 8px 15px;
+    margin: 0px 30px 0px 50px;
+    background-color: #FFD700;
+    color: #001F3F;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Create card category */
 .container{
-    margin-top: 15%;
+    margin-top: 10%;
 }
 h1{
     text-align: center;
     color: white;
 }
 .content{
-    display: flex;
+    display:flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -26,9 +88,52 @@ h1{
     padding-top: 30px;
     color: white;
     border-radius: 10px;
+    cursor: pointer;
 }
 .card:hover{
     transform: translateY(-10px);
     transition: 0.7s;
     
 }
+
+/* create card subject for choose */
+.subjects{
+    text-align: center;    
+}
+.card-type{
+    gap: 50px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+.card-subject{
+    width: 30%;
+    height: 50vh;
+    /* padding-bottom: 10px; */
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgba(237, 242, 247, 0.429) ;
+
+}
+.card-subject img{
+    width:50%;
+    height: 30vh;
+    margin-top: 30px;
+}
+
+/* create button */
+button{
+    width: 10%;
+    height: 5vh;
+    margin-top: 20px;
+    margin-left: -70%;
+    font-size: larger;
+    border: none;
+    color:#003A67 ;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #FFD000;
+}
+
+
+/* form create question */
