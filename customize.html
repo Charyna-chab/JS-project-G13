@@ -92,6 +92,30 @@
         </div>
         
     </div>
+
+    <!-- English -->
+    <div class="html" id="htmlquiz" style="display: none">
+        <h1>HTML Quiz</h1>
+
+        <!-- Difficulty Level Selection -->
+        <label for="difficulty" class="select">Select Difficulty:</label>
+        <select id="difficulty" class="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+            <option value="mixed">Mixed (All Levels)</option>
+        </select>
+        
+        <button onclick="startQuiz()">Start Quiz</button>
+        <!-- Quiz Questions Appear Here -->
+        <div id="quiz-container" style="display: none;"></div>
+
+        <button onclick="submitQuiz()" id="submit-btn" style="display:none;">Submit</button>
+
+        <h2 id="result"></h2>
+    </div>
+</div>
+
     
 </body>
 </html>
