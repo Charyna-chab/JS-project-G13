@@ -4,118 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customize</title>
-    <link rel="stylesheet" href="CSS/customize.css">
+    <link rel="stylesheet" href="css/customize.css">
+    <script src="JS/customize.js" defer></script>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <img src="images/home/logo_quiz.png" alt="Quiz App Logo">
+            </div>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a class="active" href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="pages/over_view.html"><i class="fas fa-info-circle"></i> Overview</a></li>
+                <li><a href="pages/score.html"><i class="fas fa-trophy"></i> Score</a></li>
+                <li><a href="customize.html"><i class="fas fa-cogs"></i> Customize</a></li>
+            </ul>
+            <button>Login</button>
+        </div>
+    </nav>
+
     <div class="container">
-        <h1>What would you like to do?</h1>
-        <div class="content">
+        <h1 id="title-category">What would you like to do?</h1>
+        <div class="content" id="content-1">
             <div class="card">
                 <img src="cus-image/1.png" alt="">
                 <h2>Make a Quiz</h2>
                 <p>Create your own custom quiz in minutes</p>
             </div>
-            <div class="card">
+            <div class="card" id="play-quiz">
                 <img src="cus-image/2.png" alt="">
                 <h2>Play Quiz</h2>
                 <p>Play quiz by choose topic</p>
             </div>
         </div>
-    </div>
 
-    <div class="create-quiz">
-        <form action="create">
-            <div class="setting">
-                <div class="type">
-                    <label for="type">Type:</label>
-                    <select id="choice" name="choice">
-                    <option value="multiple">Multiple choice</option>
-                    <option value="true/false">True/False</option>
-                    </select>
+        <div class="subjects" id="types-subject" style="display:none;">
+            <h1>Types of subjects</h1>
+            <div class="card-type">
+                <div class="card-subject">
+                    <img src="cus-image/html5.png" alt="">
+                    <h2>HTML</h2>
                 </div>
-                <div class="point">
-                    <label for="point">Poin:</label>
-                    <select id="total-point" name="total-point">
-                        <option value="one">10 pt</option>
-                        <option value="two">20 pt</option>
-                    </select>
+                <div class="card-subject">
+                    <img src="cus-image/css3.png" alt="">
+                    <h2>CSS</h2>
                 </div>
-                <div class="time">
-                    <label for="time">Time:</label>
-                    <input type="number" id="score" name="score" min="0" max="100" required>
-                </div>
-                <button><i class="fa fa-save"></i>Saved</button>
             </div>
-            <div class="form-question">
-                <label for="question">Question
-                    <input type="text" name="question" placeholder="Enter the question here">
-                </label>
+            <div class="card-type">
+                <div class="card-subject">
+                    <img src="cus-image/english.png" alt="">
+                    <h2>ENGLISH</h2>
+                </div>
+                <div class="card-subject">
+                    <img src="cus-image/fun.png" alt="">
+                    <h2>FUN</h2>
+                </div>
             </div>
-            <div class="form-answer">
-                <div class="topic">
-                    <p>Answer</p>
-                    <p>Correct</p>
-                    <p>Delete</p>
-                </div>
-                <div class="form-question">
-                    <label for="question">Answer: A
-                        <input type="text" name="question">
-                    </label>
-                    <i class="fa fa-check-square-o" style="font-size:24px"></i>
-                    <i class="material-icons">delete</i>
-
-                </div>
-                <div class="form-question">
-                    <label for="question">Answer: B
-                        <input type="text" name="question">
-                    </label>
-                    <i class="fa fa-check-square-o" style="font-size:24px"></i>
-                    <i class="material-icons">delete</i>
-
-                </div>
-                <div class="form-question">
-                    <label for="question">Answer: C
-                        <input type="text" name="question">
-                    </label>
-                    <i class="fa fa-check-square-o" style="font-size:24px"></i>
-                    <i class="material-icons">delete</i>
-                </div>
-                <button id="add-answer">Add More Answer</button>
-
-            </div>
-        </form>
-        <div class="box-question">
-            <div class="store-question">
-                <input type="text" name="question" placeholder="1.">
-                <i class="material-icons">delete</i>
-            </div>
+            <button id="btn">Back</button>
         </div>
-        
     </div>
-
-    <!-- English -->
-    <div class="html" id="htmlquiz" style="display: none">
-        <h1>HTML Quiz</h1>
-
-        <!-- Difficulty Level Selection -->
-        <label for="difficulty" class="select">Select Difficulty:</label>
-        <select id="difficulty" class="difficulty">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-            <option value="mixed">Mixed (All Levels)</option>
-        </select>
-        
-        <button onclick="startQuiz()">Start Quiz</button>
-        <!-- Quiz Questions Appear Here -->
-        <div id="quiz-container" style="display: none;"></div>
-
-        <button onclick="submitQuiz()" id="submit-btn" style="display:none;">Submit</button>
-
-        <h2 id="result"></h2>
-    </div>
-</div>
-
-    
 </body>
 </html>
