@@ -15,3 +15,4 @@ button.addEventListener('click',(e) =>{
     content.style.display = "flex";
     titleCategory.style.display = "block";
 })
+
