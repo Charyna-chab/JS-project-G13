@@ -93,7 +93,13 @@ main .play-btn {
     font-weight: bold;
     cursor: pointer;
     font-size: 20px;
+    
 }
+
+main .play-btn a{
+    display: inline-block;
+}
+
 main .text {
     display: flex;
     flex-direction: column;
@@ -108,3 +114,4 @@ main .text p {
     color: white;
     width: 300px;
 }
+

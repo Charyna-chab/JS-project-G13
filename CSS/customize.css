@@ -50,7 +50,7 @@ body{
     margin-right: 8px;
 }
 
-.nav-right li a.active:hover {
+.nav-right li a.active {
     color: white;
 }
 
@@ -95,10 +95,6 @@ h1{
     transition: 0.7s;
     
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 015706cfcaf0fc585011f22b225181767893def5
 /* create card subject for choose */
 .subjects{
     text-align: center;    
@@ -124,20 +120,134 @@ h1{
     margin-top: 30px;
 }
 
-/* create button */
-button{
+/* create button for back to home */
+.back{
     width: 10%;
     height: 5vh;
-    margin-top: 20px;
-    margin-left: -70%;
+    margin-top: 10px;
+    margin-left: -53%;
     font-size: larger;
     border: none;
     color:#003A67 ;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
     background-color: #FFD000;
-<<<<<<< HEAD
 }
-=======
+
+/* style for html quiz */
+.html-container{
+    width: 30%;
+    height: 40vh;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color:rgba(237, 242, 247, 0.429) ;
 }
->>>>>>> 015706cfcaf0fc585011f22b225181767893def5
+/* label */
+label{
+    display: block;
+    margin-top: 10px;
+}
+
+
+
+/* style time */
+
+
+
+
+
+
+/* button start quiz */
+.html-container button{
+    border: none;
+    width: 30%;
+    padding: 10px;
+    color: #003A67;
+    font-size: large;
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-left: 34.5%;
+    cursor: pointer;
+    background-color: #FFD000;
+
+}
+
+/* select option */
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    color: #003A67;
+    background: white;
+    cursor: pointer;
+}
+select:focus {
+    outline: 2px solid #3498db;
+}
+
+
+/* start quiz */
+.start-quiz{
+    padding: 20px;
+    width: 70%;
+    margin: auto;
+    color: #fff;
+    font-size: larger;
+    border-radius: 10px;
+    background-color:rgba(237, 242, 247, 0.429) ;
+}
+.start-quiz button{
+    padding: 10px;
+    border: none;
+    color: #003A67;
+    font-size: large;
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-left: 50%;
+    cursor: pointer;
+    background-color: #FFD000;
+
+}
+
+/* style show result */
+.show-result{
+    width: 30%;
+    height: 40vh;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    padding-top: 30px;
+    border-radius: 10px;
+    background-color:#00223C;
+}
+
+.show-result img{
+    width: 40%;
+    height: 25vh;
+    
+}
+
+
+
+.show-result h2{
+    color: #fff;
+}
+
+
+/* back button */
+.html .back {
+    border: none;
+    width: 5%;
+    color: #003A67;
+    font-size: large;
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-left: 34.5%;
+    cursor: pointer;
+    background-color: #FFD000;
+
+}
