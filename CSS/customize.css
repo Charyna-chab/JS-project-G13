@@ -12,6 +12,7 @@ body {
     align-items: center;
     padding: 10px 30px;
     background-color: #00223C;
+  
 }
 
 .nav-left {
@@ -67,7 +68,6 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
-
 /* Create card category */
 .container {
     margin-top: 10%;
