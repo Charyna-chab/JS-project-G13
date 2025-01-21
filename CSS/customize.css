@@ -1,10 +1,11 @@
-body{
+body {
     margin: 0;
     padding: 0;
     /* background:linear-gradient(#003A67,#0D66AC); */
     background-color: #003A67;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 /* create navbar  */
 .navbar {
     display: flex;
@@ -12,9 +13,11 @@ body{
     padding: 10px 30px;
     background-color: #00223C;
 }
+
 .nav-left {
     width: 30%;
 }
+
 .nav-left .logo img {
     height: 40px;
 }
@@ -25,6 +28,7 @@ body{
     justify-content: flex-end;
     align-items: center;
 }
+
 .nav-right ul {
     list-style: none;
     display: flex;
@@ -65,22 +69,25 @@ body{
 }
 
 /* Create card category */
-.container{
+.container {
     margin-top: 10%;
 }
-h1{
+
+h1 {
     text-align: center;
     color: white;
 }
-.content{
-    display:flex;
+
+.content {
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 
-    
+
 }
-.card{
+
+.card {
     width: 30%;
     height: 30vh;
     background-color: rgba(237, 242, 247, 0.429);
@@ -90,48 +97,135 @@ h1{
     border-radius: 10px;
     cursor: pointer;
 }
-.card:hover{
+
+.card:hover {
     transform: translateY(-10px);
     transition: 0.7s;
-    
+
 }
 
 /* create card subject for choose */
-.subjects{
-    text-align: center;    
+.subjects {
+    text-align: center;
 }
-.card-type{
+
+.card-type {
     gap: 50px;
     margin-top: 50px;
     display: flex;
     justify-content: center;
 }
-.card-subject{
+
+.card-subject {
     width: 30%;
     height: 50vh;
     /* padding-bottom: 10px; */
     border-radius: 10px;
     cursor: pointer;
-    background-color: rgba(237, 242, 247, 0.429) ;
+    background-color: rgba(237, 242, 247, 0.429);
 
 }
-.card-subject img{
-    width:50%;
+
+.card-subject img {
+    width: 50%;
     height: 30vh;
     margin-top: 30px;
 }
 
 /* create button */
-button{
+#btn {
     width: 10%;
     height: 5vh;
     margin-top: 20px;
     margin-left: -70%;
     font-size: larger;
     border: none;
-    color:#003A67 ;
+    color: #003A67;
     border-radius: 20px;
     cursor: pointer;
     background-color: #FFD000;
 }
 
+
+/*  css Quiz style */
+
+.css {
+    background-image: linear-gradient(to right, rgb(104, 103, 64), rgb(90, 90, 78));
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.difficulty {
+    width: 95%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 auto;
+    color: black;
+}
+
+.option {
+    margin: 20px;
+}
+
+.select{
+    width: 94%;
+    margin: 0 auto;  
+    margin-bottom: 15px;
+    color: white;
+}
+
+#start-btn{
+       
+    width: 13%;
+    margin-bottom: 5px;
+    color: black;
+    padding: 10px ;
+    border-radius: 10px;
+    background-color: rgb(242, 0, 0);
+    margin: 20px;
+}
+
+
+#submit-btn{
+       
+    width: 94%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    margin: 0 auto;
+    color: rgb(255, 255, 255);
+    padding: 10px ;
+    border-radius: 10px;
+    background-color: #003A67;
+    margin: 20px;
+}
+
+
+#result{
+    text-align: center;
+    color: white;
+}
+
+#next-btn{
+    background-color: #FFD000;
+    width: 20%;
+    margin: 20px 0px 0px 8px;
+    padding: 10px;
+    background-color: beige;
+    color: black;
+    border-radius: 10px;
+}
+
+.timer{
+    color: rgb(255, 255, 255);
+    margin: 20px;
+    font-weight: bold;
+    display: flex;
+    margin-left: 600px;
+    /* justify-content: end; */
+    /* align-self: flex-end; */
+    margin-right: 20px;
+    
+}
