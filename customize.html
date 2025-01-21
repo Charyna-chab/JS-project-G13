@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,10 @@
     <link rel="stylesheet" href="CSS/customize.css">
     <script src="JS/customize.js"defer></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="JS/customize.js" defer></script>
+    <script src="JS/customize.js" defer></script>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="nav-left">
@@ -17,12 +21,11 @@
         </div>
         <div class="nav-right">
             <ul>
-                <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="pages/over_view.html"><i class="fas fa-info-circle"></i> Overview</a></li>
-                    <li><a href="pages/score.html"><i class="fas fa-trophy"></i> Score</a></li>
-                    <li><a class="active" href="customize.html"><i class="fas fa-cogs"></i> Customize</a></li>
-                </ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="pages/over_view.html"><i class="fas fa-info-circle"></i> Overview</a></li>
+                <li><a href="pages/score.html"><i class="fas fa-trophy"></i> Score</a></li>
+                <li><a class="active" href="customize.html"><i class="fas fa-cogs"></i> Customize</a></li>
+                  
             </ul>
             <button>Login</button>
         </div>
@@ -41,14 +44,14 @@
                 <p>Play quiz by choose topic</p>
             </div>
         </div>
-        <div class="subjects" id="types-subject"  style="display:none;">
+        <div class="subjects" id="types-subject" style="display:none;">
             <h1>Types of subjects</h1>
             <div class="card-type" id="types-subject">
                 <div class="card-subject" id="html">
                     <img src="cus-image/html5.png" alt="">
                     <h2>HTML</h2>
                 </div>
-                <div class="card-subject">
+                <div class="card-subject" id="css">
                     <img src="cus-image/css3.png" alt="">
                     <h2>CSS</h2>
                 </div>
@@ -64,6 +67,10 @@
                 </div>
             </div>
            <button class="back" id="btn">Back</button>
+            <!-- Quiz -->
+
+
+            
         </div>
        
         <div class="html" id="htmlquiz" style="display: none">
@@ -108,8 +115,35 @@
             <button class="back" id="back">Back</button>
             
         </div>
+        <div class="css" id="cssquiz" style="display: none">
+            <h1 id="h1" style="display: none;">CSS Quiz</h1>
+            <div class="timer">Time lefe: 10s</div>
+
+            <!-- Difficulty Level Selection -->
+            <label for="difficulty" class="select" style="display: none;">Levels</label>
+            <select id="difficulty" class="difficulty" style="display: none;">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+                <option value="mixed">Mixed (All Levels)</option>
+            </select>
+
+            <button onclick="startQuiz()" id="start-btn" style="display: none;">Start Quiz</button>
+            <!-- Quiz Questions Appear Here -->
+            <div id="quiz-container"></div>
+
+            <button onclick="submitQuiz()" id="submit-btn" style="display: none;">Submit</button>
+            <button id="next-btn" style="display: none;">Next</button>
+            <h2 id="result" style="display: none;"></h2>
+        </div> 
+
+
+        
+
+    </div>
     </div>
     
     
 </body>
+
 </html>
