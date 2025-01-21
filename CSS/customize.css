@@ -11,6 +11,7 @@ body{
     align-items: center;
     padding: 10px 30px;
     background-color: #00223C;
+  
 }
 .nav-left {
     width: 30%;
@@ -50,7 +51,7 @@ body{
     margin-right: 8px;
 }
 
-.nav-right li a.active:hover {
+.nav-right li a.active {
     color: white;
 }
 
@@ -63,7 +64,6 @@ body{
     font-weight: bold;
     cursor: pointer;
 }
-
 /* Create card category */
 .container{
     margin-top: 10%;
@@ -95,10 +95,6 @@ h1{
     transition: 0.7s;
     
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 015706cfcaf0fc585011f22b225181767893def5
 /* create card subject for choose */
 .subjects{
     text-align: center;    
@@ -136,8 +132,5 @@ button{
     border-radius: 20px;
     cursor: pointer;
     background-color: #FFD000;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 015706cfcaf0fc585011f22b225181767893def5
+

@@ -3,6 +3,12 @@ const subjects = document.getElementById('types-subject')
 const content = document.querySelector('#content-1')
 const titleCategory = document.querySelector('#title-category')
 const button = document.querySelector('#btn');
+const html = document.getElementById('html');
+const htmlQuiz = document.getElementById('htmlquiz');
+const btnStart = document.getElementById('btnStart');
+const quiz = document.getElementById('start-quiz');
+const htmlContainer = document.getElementById('html-container');
+
 
 playQuiz.addEventListener('click',  (e) =>{
     subjects.style.display = "block";
@@ -15,11 +21,4 @@ button.addEventListener('click',(e) =>{
     content.style.display = "flex";
     titleCategory.style.display = "block";
 })
-<<<<<<< HEAD
-=======
 
-
-
-
-
->>>>>>> 015706cfcaf0fc585011f22b225181767893def5

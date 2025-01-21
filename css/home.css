@@ -1,9 +1,9 @@
-body {
+body{
     margin: 0;
     padding: 0;
+    /* background:linear-gradient(#003A67,#0D66AC); */
+    background-color: #003A67;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background: #003A67;
-    height: auto;
 }
 
 .navbar {
@@ -11,6 +11,7 @@ body {
     align-items: center;
     padding: 10px 30px;
     background-color: #00223C;
+  
 }
 .nav-left {
     width: 30%;
@@ -85,7 +86,7 @@ main  h1 {
     font-size: 50px;
     margin: 60px 0px 40px 0px;
 }
-main .play-btn {
+main #play-btn {
     padding: 15px 30px;
     margin: 0px 30px 0px 50px;
     background-color: #FFD000;
@@ -195,7 +196,7 @@ button i {
 
 .form-answer .fa-check-square-o {
     cursor: pointer;
-    /* color: #28a745; */
+   
     margin-left: 180px;
 }
 
