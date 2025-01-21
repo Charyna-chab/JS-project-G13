@@ -4,6 +4,9 @@ body{
     /* background:linear-gradient(#003A67,#0D66AC); */
     background-color: #003A67;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Inria Sans;
+    background: #003A67;
+    height: auto;
 }
 
 .navbar {
@@ -95,7 +98,13 @@ main #play-btn {
     font-weight: bold;
     cursor: pointer;
     font-size: 20px;
+    
 }
+
+main .play-btn a{
+    display: inline-block;
+}
+
 main .text {
     display: flex;
     flex-direction: column;
