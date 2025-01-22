@@ -147,23 +147,24 @@ h1 {
 }
 
 
-/*  css Quiz style */
+/*  Animal Quiz style */
 
-.css {
-    background-image: linear-gradient(to right, rgb(104, 103, 64), rgb(90, 90, 78));
+.animal {
+    background-color: rgba(237, 242, 247, 0.429);
     width: 50%;
     margin: 0 auto;
+    margin-top: 20px;
     border-radius: 20px;
     padding: 15px;
 }
 
 .difficulty {
-    width: 95%;
+    width: 100%;
     background-color: white;
     border-radius: 10px;
     padding: 10px;
     margin: 0 auto;
-    color: black;
+    color:#003A67;
 }
 
 .option {
@@ -176,15 +177,16 @@ h1 {
     margin-bottom: 15px;
     color: white;
 }
-
-#start-btn{
-       
+/* Button start quiz */
+.start-btn{
+    cursor: pointer;
     width: 13%;
     margin-bottom: 5px;
-    color: black;
+    color: #003A67;
     padding: 10px ;
-    border-radius: 10px;
-    background-color: rgb(242, 0, 0);
+    border-radius: 5px;
+    border: none; 
+    background-color: #FFD000;
     margin: 20px;
 }
 
@@ -228,4 +230,18 @@ h1 {
     /* align-self: flex-end; */
     margin-right: 20px;
     
+}
+
+
+/* Button back animal to subject quiz */
+.btn-back-animal{
+    width: 13%;
+    margin-bottom: 5px;
+    color: #003A67;
+    padding: 10px ;
+    border-radius: 5px;
+    border: none; 
+    background-color: #FFD000;
+    margin: 20px;
+    cursor: pointer;
 }
