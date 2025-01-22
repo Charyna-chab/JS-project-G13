@@ -202,8 +202,19 @@ label{
 }
 
 
-
-/* style time */
+#submit-btn{
+       
+    width: 40%;
+    margin-bottom: 5px;
+    margin: 0 auto;
+    color:#003A67;
+    padding: 5px ;
+    font-size: larger;
+    border-radius: 10px;
+    border: none;
+    background-color: #FFD000;
+    margin: 20px;
+}
 
 
 
@@ -300,6 +311,6 @@ select:focus {
     border-radius: 5px;
     margin-left: 34.5%;
     cursor: pointer;
-    background-color: #FFD000;
-
 }
+
+/* Timer style */
