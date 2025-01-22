@@ -18,20 +18,23 @@
         </div>
         <div class="nav-right">
             <ul>
-                <ul>
-                    <li><a class="active" href="index.html"> Home</a></li>
-                    <li><a href="overview.html"> Overview</a></li>
-                    <li><a href="score.html"> Score</a></li>
-                    <li><a href="customize.html"> Customize</a></li>
-                </ul>
-            </ul>
-            <button>Login</button>
-        </div>
+                <li><a href="index.html"> Home</a></li>
+                <li><a href="overview.html"></i> Overview</a></li>
+                <li><a href="score.html"> Score</a></li>
+                <li><a class="active" href="customize.html">Customize</a></li>
+
+            </ul>          
+            
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                Login
+                </button>
+            </div>
+            
     </nav>
     <div class="container">
         <h1 id="title-category">What would you like to do?</h1>
         <div class="content" id="content-1">
-            <div class="card">
+            <div class="card" id="make-quiz">
                 <img src="cus-image/1.png" alt="">
                 <h2>Make a Quiz</h2>
                 <p>Create your own custom quiz in minutes</p>
@@ -45,7 +48,7 @@
         <div class="subjects" id="types-subject" style="display:none;">
             <h1>Types of subjects</h1>
             <div class="card-type" id="types-subject">
-                <div class="card-subject">
+                <div class="card-subject" id="html">
                     <img src="cus-image/html5.png" alt="">
                     <h2>HTML</h2>
                 </div>
@@ -66,10 +69,53 @@
                     <a href="sport.html">SPORTS</a>
                 </div>
             </div>
-            <button id="btn">Back</button>
+           <button class="back" id="btn">Back</button>
             <!-- Quiz -->
 
 
+            
+        </div>
+       
+        <div class="html" id="htmlquiz" style="display: none">
+            <div class="html-container" id="html-container">
+                <h1>HTML Quiz</h1>
+
+                <!-- Difficulty Level Selection -->
+                <label for="difficulty" >Select Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                    <option value="mixed">Mixed (All Levels)</option>
+                </select>
+
+                <label for="time">Select time per question:</label>
+                <select id="time">
+                    <option value="10">10 seconds</option>
+                    <option value="15">15 seconds</option>
+                    <option value="20">20 seconds</option>
+                    <option value="25">25 seconds</option>
+                    <option value="30">30 seconds</option>
+                    <option value="40">40 seconds</option>
+                </select>
+            
+                <button id="btnStart" onclick="startQuiz()">Start Quiz</button>
+            </div>
+
+            
+            <!-- Quiz Questions Appear Here -->
+             <div class="start-quiz" id="start-quiz" style="display: none;">
+                <div id="quiz-container" ></div>
+
+                <button onclick="submitQuiz()" id="submit-btn" style="display:none;">Submit</button>
+
+            </div>
+            <div class="show-result" id="show-result" style="display: none;">
+                <img src="images/home/logo_quiz.png" alt="">
+                <h2 id="result"></h2>
+            </div>
+
+            <button class="back" id="back">Back</button>
             
         </div>
         <div class="css" id="cssquiz" style="display: none">
@@ -101,6 +147,9 @@
 
     </div>
     </div>
-</body>
 
+
+    
+    
+</body>
 </html>
