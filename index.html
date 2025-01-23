@@ -11,60 +11,59 @@
 <body>
   <!-- Navbar -->
   <nav class="navbar" id="nav">
-      <div class="nav-left">
-        <div class="logo">
-            <img src="images/home/logo_quiz.png" alt="Quiz App Logo">
-        </div>
-      </div>
-      <div class="nav-right">
-        <ul>
-          <li><a class="active" href="#"> Home</a></li>
-          <li><a href="overview.html"> Overview</a></li>
-          <li><a href="score.html"> Score</a></li>
-          <li><a href="customize.html" id="customizeLink">Customize</a></li>
-        </ul>  
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-          Login
-        </button>
-      </div>                    
-  </nav>
-     
-  <!-- Form Login -->
-  <div class="modal" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-         
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <!-- Login Form -->
-        <div id="auth-box">
-          <!-- Login Box should be visible by default -->
-          <div id="login-box" style="display: block;">
-            <div class="left">
-              <h1>Login</h1>
-              <input type="text" id="loginGmail" name="loginGmail" placeholder="Gmail" />
-              <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" />
-              <input type="submit" id="loginSubmit" name="login_submit" value="Login" />
-              <p>Don't have an account? <a href="#" id="showSignUp">Sign Up</a></p>
-            </div>
-          </div>
-
-          <!-- Sign-Up Box should be hidden initially -->
-          <div id="signUp-box" style="display: none;">
-            <div class="left">
-              <h1>Sign Up</h1>
-              <input type="text" id="username" name="username" placeholder="Username" />
-              <input type="text" id="email" name="email" placeholder="E-mail" />
-              <input type="password" id="password" name="password" placeholder="Password" />
-              <input type="submit" id="signUpBtn" name="signup_submit" value="Sign Up" />
-              <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
-            </div>
-          </div>
-        </div>
+    <div class="nav-left">
+      <div class="logo">
+          <img src="images/home/logo_quiz.png" alt="Quiz App Logo">
       </div>
     </div>
-  </div>      
+    <div class="nav-right">
+      <ul>
+        <li><a class="active" href="#"> Home</a></li>
+        <li><a href="overview.html"> Overview</a></li>
+        <li><a href="score.html"> Score</a></li>
+        <li><a href="customize.html" id="customizeLink">Customize</a></li>
+      </ul>  
+      <button type="button" id="btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+        Login
+      </button>
+    </div>
+    <!-- Form Login & Sign up -->
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <form action="">
+              <div id="auth-box">
+                <div id="login-box" style="display: block;">
+                  <div class="left">
+                    <h1>Login</h1>
+                    <input type="text" id="loginGmail" name="loginGmail" placeholder="Gmail" />
+                    <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" />
+                    <input type="submit" id="loginSubmit" name="login_submit" value="Login" />
+                    <p>Don't have an account? <a href="#" id="showSignUp">Sign Up</a></p>
+                  </div>
+                </div>    
+                <div id="signUp-box" style="display: none;">
+                  <div class="left">
+                    <h1>Sign Up</h1>
+                    <input type="text" id="username" name="username" placeholder="Username" />
+                    <input type="text" id="email" name="email" placeholder="E-mail" />
+                    <input type="password" id="password" name="password" placeholder="Password" />
+                    <input type="submit" id="signUpBtn" name="signup_submit" value="Sign Up" />
+                    <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>      
+    </div>
+  </nav>
+
 
   <main id="main-page">
       <h1>Welcome to Quiz app</h1>
@@ -74,27 +73,28 @@
       <div class="content">
           <img src="images/home/Group 6.png" alt="">
           <div class="text">
-              <h2>Hello World !</h2>
-              <p>Add excitement and interaction with a live quiz! Whether serious or casual, our free quiz maker ensures it’s fun and engaging.</p>
+              <h2>Explore your knowledge !</h2>
+              <p>Test your quiz by varying question types, ensuring clarity, and reviewing answers for accuracy and alignment with learning objectives.</p>
           </div>
       </div>
   </main>
 
+
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
-    import { getDatabase, ref, set, update} from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+    import { getDatabase, ref, set, update } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyARe7gLOoWoWNehVT6QiSfvVjicRKSuAPA",
       authDomain: "authentication-app-651f5.firebaseapp.com",
       databaseURL: "https://authentication-app-651f5-default-rtdb.firebaseio.com",
       projectId: "authentication-app-651f5",
-      storageBucket: "authentication-app-651f5.firebasestorage.app",
+      storageBucket: "authentication-app-651f5.appspot.com",
       messagingSenderId: "1063881848632",
       appId: "1:1063881848632:web:305942fe02ffd54c6033cd"
     };
-  
+
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
@@ -113,13 +113,10 @@
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const user = userCredential.user;
-          const userRef = ref(database, 'users/' + user.uid);
-          set(userRef, {
-            username: username,
-            email: email
+          updateProfile(user, { displayName: username }).then(() => {
+            set(ref(database, 'users/' + user.uid), { username, email });
+            alert('Created successfully! Welcome, ' + username);
           });
-          alert('User created successfully! Welcome, ' + username);
-          document.getElementById('myModal').click(); // Close modal after sign-up
         })
         .catch((error) => {
           alert('Error: ' + error.message);
@@ -138,13 +135,10 @@
           const username = user.displayName || 'User';
 
           const dt = new Date();
-          const update = ref(database, 'users/' + user.uid);
-          set(update, {
-            last_login: dt.toISOString(),
-          })
+          const updateRef = ref(database, 'users/' + user.uid);
+          update(updateRef, { last_login: dt.toISOString() })
             .then(() => {
-              alert('User logged in! ' + username);
-              document.getElementById('myModal').click(); // Close modal after login
+              alert('Logged in successfully! Welcome, ' + username);
             })
             .catch((error) => {
               alert('Error updating last login: ' + error.message);
@@ -167,6 +161,5 @@
       document.getElementById('login-box').style.display = 'block';
     });
   </script>
-  
 </body>
 </html>

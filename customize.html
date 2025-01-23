@@ -24,12 +24,6 @@
                 <li><a class="active" href="customize.html">Customize</a></li>
 
             </ul>          
-            
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-                Login
-                </button>
-            </div>
-            
     </nav>
     <div class="container">
         <h1 id="title-category">What would you like to do?</h1>
@@ -113,14 +107,11 @@
                 <img src="images/home/logo_quiz.png" alt="">
                 <h2 id="result"></h2>
             </div>
-
-            <button class="back" id="back">Back</button>
-            
+            <button class="back" id="back">Back</button>          
         </div>
         <div class="css" id="cssquiz" style="display: none">
             <h1 id="h1" style="display: none;">CSS Quiz</h1>
             <div class="timer">Time lefe: 10s</div>
-
             Difficulty Level Selection
             <label for="difficulty" class="select" style="display: none;">Levels</label>
             <select id="difficulty" class="difficulty" style="display: none;">
@@ -129,26 +120,14 @@
                 <option value="hard">Hard</option>
                 <option value="mixed">Mixed (All Levels)</option>
             </select>
-
             <button onclick="startQuiz()" id="start-btn" style="display: none;">Start Quiz</button>
             <!-- Quiz Questions Appear Here -->
             <div id="quiz-container"></div>
-
             <button onclick="submitQuiz()" id="submit-btn" style="display: none;">Submit</button>
             <button id="next-btn" style="display: none;">Next</button>
             <h2 id="result" style="display: none;"></h2>
         </div> 
-
-        
-
-
-        
-
     </div>
     </div>
-
-
-    
-    
 </body>
 </html>
