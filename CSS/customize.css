@@ -119,10 +119,14 @@ h1 {
     height: 50vh;
     /* padding-bottom: 10px; */
     border-radius: 10px;
-    cursor: pointer;
     background-color: rgba(237, 242, 247, 0.429);
 
 }
+
+.card-subject h2 a{
+    text-decoration: none;
+}
+
 
 .card-subject img {
     width: 50%;
