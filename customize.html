@@ -7,9 +7,6 @@
     <title>Customize</title>
     <link rel="stylesheet" href="CSS/customize.css">
     <script src="JS/customize.js" defer></script>
-    <script src="JS/HTML.js" defer></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="JS/customize.js" defer></script>
 </head>
 
 <body>
@@ -21,14 +18,18 @@
         </div>
         <div class="nav-right">
             <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="pages/over_view.html"><i class="fas fa-info-circle"></i> Overview</a></li>
-                <li><a href="pages/score.html"><i class="fas fa-trophy"></i> Score</a></li>
-                <li><a class="active" href="customize.html"><i class="fas fa-cogs"></i> Customize</a></li>
+                <li><a href="index.html"> Home</a></li>
+                <li><a href="overview.html"></i> Overview</a></li>
+                <li><a href="score.html"> Score</a></li>
+                <li><a class="active" href="customize.html">Customize</a></li>
 
-            </ul>
-            <button>Login</button>
-        </div>
+            </ul>          
+            
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                Login
+                </button>
+            </div>
+            
     </nav>
     <div class="container">
         <h1 id="title-category">What would you like to do?</h1>
@@ -56,12 +57,13 @@
                     <h2>CSS</h2>
                 </div>
             </div>
-            <div class="card-type">
-                <div class="card-subject">
+            <div class="card-type" id="card-subject">
+                <div class="card-subject" id="english">
                     <img src="cus-image/english.png" alt="">
                     <h2>ENGLISH</h2>
+                    <a href="animal.html">English</a>
                 </div>
-                <div class="card-subject">
+                <div class="card-subject" id="fun">
                     <img src="cus-image/fun.png" alt="">
                     <h2>FUN</h2>
                 </div>
@@ -78,6 +80,8 @@
             <div class="timer">Time lefe: 10s</div>
     
             <!-- Difficulty Level Selection -->
+
+            Difficulty Level Selection
             <label for="difficulty" class="select" style="display: none;">Levels</label>
             <select id="difficulty" class="difficulty" style="display: none;">
                 <option value="easy">Easy</option>
@@ -96,32 +100,17 @@
         </div>
 
 
-        <div class="html" id="htmlquiz" style="display: none">
-            <h1 id="h1">HTML Quiz</h1>
-            <label for="difficulty" class="select">Levels</label>
-            <select id="choosehtml" class="choosehtml" >
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-                <option value="mixed">Mixed (All Levels)</option>
-            </select>
+        
 
-            <!-- <button onclick="startQuiz()" id="starthtml">Start Quiz</button> -->
-            <button onclick="startHtmlQuiz()" id="starthtml">Start Quiz</button>
- <!--" style="display: none;-->
-            <div id="quiz-container"></div>
-    
-            <button onclick="submitQuiz()" id="submithtml" style="display: none;">Submit</button>
-            
-            <button id="next-btn" style="display: none;">Next</button>
-            <h2 id="result" style="display: none;"></h2>
-        </div>
+        
 
 
         
 
 
     </div>
+
+
     
 
 
@@ -132,5 +121,4 @@
 
 
 </body>
-
 </html>

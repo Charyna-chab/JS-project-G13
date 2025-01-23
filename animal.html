@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Quiz</title>
+    <link rel="stylesheet" href="CSS/customize.css">
+    <script src="JS/animal.js" defer></script>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <img src="images/home/logo_quiz.png" alt="Quiz App Logo">
+            </div>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <ul>
+                    <li><a class="active" href="index.html"> Home</a></li>
+                    <li><a href="overview.html"> Overview</a></li>
+                    <li><a href="score.html"> Score</a></li>
+                    <li><a href="customize.html"> Customize</a></li>
+                </ul>
+            </ul>
+            <button>Login</button>
+        </div>
+    </nav>
+   
+    <!-- English subject -->
+    <div class="animal" id="animalquiz">
+        <h1>Animal Quiz</h1>
+
+        <!-- Difficulty Level Selection -->
+        <label for="difficulty" class="select">Select Difficulty:</label>
+        <select id="difficulty" class="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+            <option value="mixed">Mixed (All Levels)</option>
+        </select>
+        
+        <button onclick="startQuiz()"class="start-btn">Start Quiz</button>
+        <button class="btn-back-animal">Back</button>
+
+        <!-- Quiz Questions Appear Here -->
+        <div id="quiz-container"></div>
+
+        <button onclick="submitQuiz()" id="submit-btn" style="display:none;">Submit</button>
+
+        <h2 id="result"></h2>
+    </div>
+</div>
+
+</body>
+</html>

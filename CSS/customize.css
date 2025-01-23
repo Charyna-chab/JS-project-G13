@@ -12,6 +12,7 @@ body {
     align-items: center;
     padding: 10px 30px;
     background-color: #00223C;
+  
 }
 
 .nav-left {
@@ -67,7 +68,6 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
-
 /* Create card category */
 .container {
     margin-top: 10%;
@@ -176,6 +176,72 @@ here
     width: 95%;
     background-color: white;
     border-radius: 10px;
+<<<<<<< HEAD
+=======
+    background-color:rgba(237, 242, 247, 0.429) ;
+}
+/* label */
+label{
+    display: block;
+    margin-top: 10px;
+}
+/*  Animal Quiz style */
+
+.animal {
+    background-color: rgba(237, 242, 247, 0.429);
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.difficulty {
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 auto;
+    color:#003A67;
+}
+
+.option {
+    margin: 20px;
+}
+
+.select{
+    width: 94%;
+    margin: 0 auto;  
+    margin-bottom: 15px;
+    color: white;
+}
+/* Button start quiz */
+.start-btn{
+    cursor: pointer;
+    width: 13%;
+    margin-bottom: 5px;
+    color: #003A67;
+    padding: 10px ;
+    border-radius: 5px;
+    border: none; 
+    background-color: #FFD000;
+    margin: 20px;
+}
+
+
+
+/* style time */
+
+
+
+
+
+
+/* button start quiz */
+.html-container button{
+    border: none;
+    width: 30%;
+>>>>>>> 315f0ca7f5f7a37e6c01a1d2835ef7123f2674ad
     padding: 10px;
     margin: 0 auto;
     color: black;
