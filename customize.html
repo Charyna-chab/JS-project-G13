@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customize</title>
     <link rel="stylesheet" href="CSS/customize.css">
-    <script src="JS/customize.js"defer></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="JS/customize.js" defer></script>
+    <script src="JS/HTML.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="JS/customize.js" defer></script>
 </head>
 
@@ -25,7 +25,7 @@
                 <li><a href="pages/over_view.html"><i class="fas fa-info-circle"></i> Overview</a></li>
                 <li><a href="pages/score.html"><i class="fas fa-trophy"></i> Score</a></li>
                 <li><a class="active" href="customize.html"><i class="fas fa-cogs"></i> Customize</a></li>
-                  
+
             </ul>
             <button>Login</button>
         </div>
@@ -66,59 +66,17 @@
                     <h2>FUN</h2>
                 </div>
             </div>
-           <button class="back" id="btn">Back</button>
+            <button class="back" id="btn">Back</button>
             <!-- Quiz -->
 
 
-            
+
         </div>
-       
-        <div class="html" id="htmlquiz" style="display: none">
-            <div class="html-container" id="html-container">
-                <h1>HTML Quiz</h1>
 
-                <!-- Difficulty Level Selection -->
-                <label for="difficulty" >Select Difficulty:</label>
-                <select id="difficulty">
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
-                    <option value="mixed">Mixed (All Levels)</option>
-                </select>
-
-                <label for="time">Select time per question:</label>
-                <select id="time">
-                    <option value="10">10 seconds</option>
-                    <option value="15">15 seconds</option>
-                    <option value="20">20 seconds</option>
-                    <option value="25">25 seconds</option>
-                    <option value="30">30 seconds</option>
-                    <option value="40">40 seconds</option>
-                </select>
-            
-                <button id="btnStart" onclick="startQuiz()">Start Quiz</button>
-            </div>
-
-            
-            <!-- Quiz Questions Appear Here -->
-             <div class="start-quiz" id="start-quiz" style="display: none;">
-                <div id="quiz-container" ></div>
-
-                <button onclick="submitQuiz()" id="submit-btn" style="display:none;">Submit</button>
-
-            </div>
-            <div class="show-result" id="show-result" style="display: none;">
-                <img src="images/home/logo_quiz.png" alt="">
-                <h2 id="result"></h2>
-            </div>
-
-            <button class="back" id="back">Back</button>
-            
-        </div>
         <div class="css" id="cssquiz" style="display: none">
             <h1 id="h1" style="display: none;">CSS Quiz</h1>
             <div class="timer">Time lefe: 10s</div>
-
+    
             <!-- Difficulty Level Selection -->
             <label for="difficulty" class="select" style="display: none;">Levels</label>
             <select id="difficulty" class="difficulty" style="display: none;">
@@ -127,23 +85,52 @@
                 <option value="hard">Hard</option>
                 <option value="mixed">Mixed (All Levels)</option>
             </select>
-
+    
             <button onclick="startQuiz()" id="start-btn" style="display: none;">Start Quiz</button>
             <!-- Quiz Questions Appear Here -->
             <div id="quiz-container"></div>
-
+    
             <button onclick="submitQuiz()" id="submit-btn" style="display: none;">Submit</button>
             <button id="next-btn" style="display: none;">Next</button>
             <h2 id="result" style="display: none;"></h2>
-        </div> 
+        </div>
+
+
+        <div class="html" id="htmlquiz" style="display: none">
+            <h1 id="h1">HTML Quiz</h1>
+            <label for="difficulty" class="select">Levels</label>
+            <select id="choosehtml" class="choosehtml" >
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+                <option value="mixed">Mixed (All Levels)</option>
+            </select>
+
+            <!-- <button onclick="startQuiz()" id="starthtml">Start Quiz</button> -->
+            <button onclick="startHtmlQuiz()" id="starthtml">Start Quiz</button>
+ <!--" style="display: none;-->
+            <div id="quiz-container"></div>
+    
+            <button onclick="submitQuiz()" id="submithtml" style="display: none;">Submit</button>
+            
+            <button id="next-btn" style="display: none;">Next</button>
+            <h2 id="result" style="display: none;"></h2>
+        </div>
 
 
         
 
-    </div>
+
     </div>
     
-    
+
+
+
+
+    </div>
+    </div>
+
+
 </body>
 
 </html>

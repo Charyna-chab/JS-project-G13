@@ -1,129 +1,206 @@
-const playQuiz = document.getElementById('play-quiz')
+
+
+const playQuiz = document.querySelector('#play-quiz')
 const subjects = document.getElementById('types-subject')
 const content = document.querySelector('#content-1')
 const titleCategory = document.querySelector('#title-category')
 const button = document.querySelector('#btn');
-const html = document.getElementById('html');
-const htmlQuiz = document.getElementById('htmlquiz');
-const btnStart = document.getElementById('btnStart');
-const quiz = document.getElementById('start-quiz');
-const htmlContainer = document.getElementById('html-container');
-const submitBtn = document.getElementById('submit-btn')
-const showResult = document.getElementById('show-result');
-const backBtn = document.getElementById('back');
+
+// each subject of quiz
 
 
-playQuiz.addEventListener('click',  (e) =>{
+
+
+
+// const cardSubjects = document.querySelector('.card-subject');
+const cssQuiz = document.querySelector('#cssquiz');
+const css = document.querySelector("#css");         // css div
+
+subjects.addEventListener('click', (e) => {
+    // subjects.style.display = "none";
+    css.style.display = "block";
+
+});
+
+
+css.addEventListener('click', (e) => {
+    subjects.style.display = "none";
+    cssQuiz.style.display = "block";
+
+});
+
+
+
+
+
+// funtion for quiz html and API
+let questions = [];
+let userAnswers = {};
+let currentQuestionIndex = 0; // Track the current question
+const startBtn = document.querySelector("#start-btn");
+const label = document.querySelector('.select');
+const result = document.querySelector('#result');
+const submitBtn = document.querySelector('#submit-btn');
+const nextBtn = document.getElementById("next-btn"); 
+const timer = document.querySelector('.timer');
+const quizTitle = document.querySelector("#h1");
+let timerInterval;
+
+
+
+
+// Append the Next button to the DOM
+
+difficulty.style.display = "block";
+label.style.display = "block";
+startBtn.style.display = "block";
+result.style.display = "block";
+quizTitle.style.display = "block";
+timer.style.display = "none";
+
+
+
+function startQuiz() {
+    quizTitle.style.display = "none";
+    timer.style.display = "block";
+    // document.getElementById("quiz-container").innerHTML = "Loading questions...";
+    document.getElementById("result").innerText = "";
+
+
+    let difficulty = document.getElementById("difficulty").value;
+
+    let urls = {
+        easy: "https://opentdb.com/api.php?amount=5&category=18&difficulty=easy&type=multiple", 
+        medium: "https://opentdb.com/api.php?amount=5&category=18&difficulty=medium&type=multiple", 
+        hard: "https://opentdb.com/api.php?amount=5&category=18&difficulty=hard&type=multiple",
+        mixed: [
+            "https://opentdb.com/api.php?amount=2&category=18&difficulty=easy&type=multiple", 
+            "https://opentdb.com/api.php?amount=2&category=18&difficulty=medium&type=multiple", 
+            "https://opentdb.com/api.php?amount=2&category=18&difficulty=hard&type=multiple"   
+        ]
+    };
+
+    let fetchUrls = difficulty === "mixed" ? urls.mixed : [urls[difficulty]];
+
+    // Fetch Questions from API
+    Promise.all(fetchUrls.map(url => fetch(url).then(res => res.json())))
+        .then(data => {
+            if (difficulty === "mixed") {
+                questions = [...data[0].results, ...data[1].results, ...data[2].results];
+            } else {
+                questions = data[0].results;
+            }
+            currentQuestionIndex = 0; // Reset to the first question
+            displayCurrentQuestion();
+        })
+        .catch(error => {
+            console.error("Error fetching questions:", error);
+            document.getElementById("quiz-container").innerHTML = "Error loading questions. Please try again later.";
+        });
+}
+function displayCurrentQuestion() {
+    difficulty.style.display = "none";
+    startBtn.style.display = "none";
+    label.style.display = "none";
+    nextBtn.style.display = "block";
+
+
+
+    clearInterval(timerInterval); // Clear any previous timer
+    let secondsLeft = 10; // Set timer duration
+    timer.textContent = `Time left: ${secondsLeft} s`;
+
+    // Timer logic
+    timerInterval = setInterval(() => {
+        secondsLeft--;
+        timer.textContent = `Time left: ${secondsLeft} s`;
+        nextBtn.addEventListener("click", nextQuestion);
+
+
+        if (secondsLeft <= 0) {
+
+            clearInterval(timerInterval); // Stop the timer
+            if (currentQuestionIndex < questions.length - 1) {
+
+                nextQuestion(); // Automatically go to the next question
+            } else {
+                submitQuiz(); // Submit the quiz if it's the last question
+            }
+        }
+    }, 1000);
+
+    let quizContainer = document.getElementById("quiz-container");
+    quizContainer.innerHTML = "";
+
+    let q = questions[currentQuestionIndex];
+    let answers = [...q.incorrect_answers, q.correct_answer].sort(() => Math.random() - 0.5);
+
+    let questionHTML = `
+        <div class="question">${currentQuestionIndex + 1}. ${q.question}</div>
+        <div class="answers">
+            ${answers.map(answer => `
+                <label>
+                    <input type="radio" name="q${currentQuestionIndex}" value="${answer}" onclick="saveAnswer(${currentQuestionIndex}, '${answer}')">
+                    ${answer}
+                </label><br>
+            `).join('')}
+        </div>
+    `;
+    quizContainer.innerHTML = questionHTML;
+
+    // Show the Next button if there are more questions
+    if (currentQuestionIndex < questions.length - 1) {
+        nextBtn.style.display = "block";
+        submitBtn.style.display = "none";
+    } else {
+        // Hide the Next button on the last question and show Submit
+        nextBtn.style.display = "none";
+        submitBtn.style.display = "block";
+    }
+}
+
+function nextQuestion() {
+
+    clearInterval(timerInterval); // Stop the current timer
+    if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        displayCurrentQuestion();
+    }
+}
+
+function saveAnswer(questionIndex, selectedAnswer) {
+    userAnswers[questionIndex] = selectedAnswer;
+}
+
+
+function submitQuiz() {
+    clearInterval(timerInterval); // Stop the timer when the quiz ends
+    document.getElementById("quiz-container").style.display = "none";
+    document.getElementById("h1").style.display = "none";
+    submitBtn.style.display = "none";
+    timer.style.display = "none";
+
+    let score = 0;
+    questions.forEach((q, index) => {
+        if (userAnswers[index] === q.correct_answer) {
+            score++;
+        }
+    });
+
+    // Display the score
+    document.getElementById("result").innerText = `Score : ${score} / ${questions.length}`;
+}
+
+
+// choose the subject
+playQuiz.addEventListener('click', (e) => {
     subjects.style.display = "block";
     content.style.display = "none";
     titleCategory.style.display = "none";
 })
 
-button.addEventListener('click',(e) =>{
+button.addEventListener('click', (e) => {
     subjects.style.display = "none";
     content.style.display = "flex";
     titleCategory.style.display = "block";
 })
-
-// quiz HTML
-html.addEventListener('click',(e) => {
-    htmlQuiz.style.display ='block';
-    subjects.style.display = 'none';
-    content.style.display = "none";
-    titleCategory.style.display = "none";
-})
-
-btnStart.addEventListener('click',(e) => {
-    quiz.style.display = 'block'
-    htmlContainer.style.display = 'none'
-
-})
-
-submitBtn.addEventListener('click',(e) => {
-    showResult.style.display = 'block';
-    quiz.style.display = 'none';
-})
-
-backBtn.addEventListener('click',(e) => {
-    subjects.style.display = 'block';
-    htmlQuiz.style.display = 'none';
-})
-// funtion for quiz html and API
-let questions = [];
-        let userAnswers = {};
-
-        function startQuiz() {
-            document.getElementById("quiz-container").innerHTML = "Loading questions...";
-            document.getElementById("result").innerText = "";
-            
-            let difficulty = document.getElementById("difficulty").value;
-            let urls = {
-                easy: "https://the-trivia-api.com/api/questions?categories=technology&limit=5&difficulty=easy",
-                medium: "https://the-trivia-api.com/api/questions?categories=technology&limit=5&difficulty=medium",
-                hard: "https://the-trivia-api.com/api/questions?categories=technology&limit=5&difficulty=hard",
-                mixed: [
-                    "https://the-trivia-api.com/api/questions?categories=technology&limit=2&difficulty=easy",
-                    "https://the-trivia-api.com/api/questions?categories=technology&limit=2&difficulty=medium",
-                    "https://the-trivia-api.com/api/questions?categories=technology&limit=2&difficulty=hard"
-                ]
-            };
-
-            let fetchUrls = difficulty === "mixed" ? urls.mixed : [urls[difficulty]];
-
-            // Fetch Questions from API
-            Promise.all(fetchUrls.map(url => fetch(url).then(res => res.json())))
-                .then(data => {
-                    questions = difficulty === "mixed" ? [...data[0], ...data[1], ...data[2]] : data[0];
-                    displayQuestions();
-                })
-                .catch(error => console.error("Error fetching questions:", error));
-        }
-
-        function displayQuestions() {
-            let quizContainer = document.getElementById("quiz-container");
-            quizContainer.innerHTML = "";
-            userAnswers = {};
-
-            questions.forEach((q, index) => {
-                let answers = [...q.incorrectAnswers, q.correctAnswer].sort(() => Math.random() - 0.5);
-
-                let questionHTML = `
-                    <div class="question">${index + 1}. ${q.question}</div>
-                    <div class="answers">
-                        ${answers.map(answer => `
-                            <label>
-                                <input type="radio" name="q${index}" value="${answer}" onclick="saveAnswer(${index}, '${answer}')">
-                                ${answer}
-                            </label><br>
-                        `).join("")}
-                    </div>
-                `;
-
-                quizContainer.innerHTML += questionHTML;
-            });
-
-            document.getElementById("submit-btn").style.display = "block";
-        }
-
-        function saveAnswer(index, answer) {
-            userAnswers[index] = answer;
-        }
-
-        function submitQuiz() {
-            let score = 0;
-
-            questions.forEach((q, index) => {
-                if (userAnswers[index] === q.correctAnswer) {
-                    score++;
-                }
-            });
-
-            document.getElementById("result").innerText = `Your Score: ${score} / ${questions.length}`;
-        }
-
- 
-
-
-   
-
-
