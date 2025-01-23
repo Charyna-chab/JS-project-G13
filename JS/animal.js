@@ -78,8 +78,8 @@ function displayQuestion() {
     quizContainer.innerHTML = questionHTML;
 
     let buttonHTML = `
-        <button onclick="prevQuestion()" ${currentQuestionIndex === 0 ? "disabled" : ""}>Previous</button>
-        <button onclick="nextQuestion()" ${currentQuestionIndex === questions.length - 1 ? "style='display:none;'" : ""}>Next</button>
+        <button  class="prev-btn"  onclick="prevQuestion()" ${currentQuestionIndex === 0 ? "disabled" : ""}>Previous</button>
+        <button  class="next-btn" onclick="nextQuestion()" ${currentQuestionIndex === questions.length - 1 ? "style='display:none;'" : ""} id= "next">Next</button>
         <button id="submit-btn" onclick="submitQuiz()" ${currentQuestionIndex === questions.length - 1 ? "" : "style='display:none;'"}>Submit</button>
     `;
 
@@ -141,8 +141,8 @@ function submitQuiz() {
         }
     });
 
-    let resultHTML = `<h2>Your Score: ${score} / ${questions.length}</h2>`;
-    resultHTML += `<h3>Review your answers:</h3>`;
+    let resultHTML = `<h2 class="score" >Your Score: ${score} / ${questions.length}</h2>`;
+    resultHTML += ` <button class="review">Review your answers:</button>`;
 
     questions.forEach((q, index) => {
         let correctAnswer = decodeURIComponent(q.correct_answer);
@@ -152,12 +152,15 @@ function submitQuiz() {
         let color = isCorrect ? "green" : "red";
 
         resultHTML += `
-            <div class="question">${index + 1}. ${decodeURIComponent(q.question)}</div>
-            <div>
-                <strong>Your Answer:</strong> <span style="color: ${color};">${userAnswer}</span><br>
-                <strong>Correct Answer:</strong> <span style="color: green;">${correctAnswer}</span>
-            </div>
-            <hr>
+            
+                <div class="question">${index + 1}. ${decodeURIComponent(q.question)}</div>
+                <div class="correction">
+                    Your Answer:<span style="color: ${color};">${userAnswer}</span><br>
+                    Correct Answer: <span style="color: green;">${correctAnswer}</span>
+                </div>
+                <hr>
+            
+            
         `;
     });
 
