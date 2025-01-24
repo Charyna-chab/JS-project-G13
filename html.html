@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animal Quiz</title>
+    <title>Html Quiz</title>
     <link rel="stylesheet" href="CSS/customize.css">
-    <script src="JS/animal.js" defer></script>
-
+    <script src="JS/html.js"defer></script>
 </head>
 <body>
     <nav class="navbar">
@@ -17,20 +16,18 @@
         </div>
         <div class="nav-right">
             <ul>
-                <ul>
-                    <li><a class="active" href="index.html"> Home</a></li>
-                    <li><a href="overview.html"> Overview</a></li>
-                    <li><a href="score.html"> Score</a></li>
-                    <li><a href="customize.html"> Customize</a></li>
-                </ul>
+                <li><a class="active" href="index.html"> Home</a></li>
+                <li><a href="overview.html"> Overview</a></li>
+                <li><a href="score.html"> Score</a></li>
+                <li><a href="customize.html"> Customize</a></li>
             </ul>
             <button>Login</button>
         </div>
     </nav>
    
-    <!-- English subject -->
+    <!-- Sport Quiz -->
     <div class="animal" id="animalquiz">
-        <h1>Animal Quiz</h1>
+        <h1>HTML Quiz</h1>
         <div class="quiz" id="quiz">
              <!-- Difficulty Level Selection -->
             <label for="difficulty" class="select">Select Difficulty:</label>
@@ -43,7 +40,6 @@
             
             <button onclick="startQuiz()"class="start-btn" id="start-btn">Start Quiz</button>
             <a href="customize.html"><button class="btn-back-animal">Back</button></a>
-            
         </div>
        
 
@@ -54,7 +50,5 @@
 
         <h2 id="result"></h2>
     </div>
-</div>
-
 </body>
 </html>

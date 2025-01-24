@@ -22,13 +22,13 @@ function startQuiz() {
 
     let difficulty = document.getElementById("difficulty").value;
     let urls = {
-        easy: "https://opentdb.com/api.php?amount=10&category=27&difficulty=easy&type=multiple&encode=url3986",
-        medium: "https://opentdb.com/api.php?amount=10&category=27&difficulty=medium&type=multiple&encode=url3986",
-        hard: "https://opentdb.com/api.php?amount=10&category=27&difficulty=hard&type=multiple&encode=url3986",
+        easy: "https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple",
+        medium:"https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple",
+        hard: "https://opentdb.com/api.php?amount=10&category=18&difficulty=hard&type=multiple",
         mixed: [
-            "https://opentdb.com/api.php?amount=4&category=27&difficulty=easy&type=multiple&encode=url3986",
-            "https://opentdb.com/api.php?amount=3&category=27&difficulty=medium&type=multiple&encode=url3986",
-            "https://opentdb.com/api.php?amount=3&category=27&difficulty=hard&type=multiple&encode=url3986"
+            "https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple",
+            "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple",
+           "https://opentdb.com/api.php?amount=10&category=18&difficulty=hard&type=multiple",
         ]
     };
 
@@ -78,8 +78,8 @@ function displayQuestion() {
     quizContainer.innerHTML = questionHTML;
 
     let buttonHTML = `
-        <button  class="prev-btn"  onclick="prevQuestion()" ${currentQuestionIndex === 0 ? "disabled" : ""}>Previous</button>
-        <button  class="next-btn" onclick="nextQuestion()" ${currentQuestionIndex === questions.length - 1 ? "style='display:none;'" : ""} id= "next">Next</button>
+        <button  class="prev-btn" onclick="prevQuestion()" ${currentQuestionIndex === 0 ? "disabled" : ""}>Previous</button>
+        <button class="next-btn" onclick="nextQuestion()" ${currentQuestionIndex === questions.length - 1 ? "style='display:none;'" : ""}>Next</button>
         <button id="submit-btn" onclick="submitQuiz()" ${currentQuestionIndex === questions.length - 1 ? "" : "style='display:none;'"}>Submit</button>
     `;
 
@@ -141,8 +141,8 @@ function submitQuiz() {
         }
     });
 
-    let resultHTML = `<h2 class="score" >Your Score: ${score} / ${questions.length}</h2>`;
-    resultHTML += ` <button class="review">Review your answers:</button>`;
+    let resultHTML = `<h2 class="score">Your Score: ${score} / ${questions.length}</h2>`;
+    resultHTML += `<button class="review">Review your answers:</button>`;
 
     questions.forEach((q, index) => {
         let correctAnswer = decodeURIComponent(q.correct_answer);
@@ -152,15 +152,12 @@ function submitQuiz() {
         let color = isCorrect ? "green" : "red";
 
         resultHTML += `
-            
-                <div class="question">${index + 1}. ${decodeURIComponent(q.question)}</div>
-                <div class="correction">
-                    Your Answer:<span style="color: ${color};">${userAnswer}</span><br>
-                    Correct Answer: <span style="color: green;">${correctAnswer}</span>
-                </div>
-                <hr>
-            
-            
+            <div class="question">${index + 1}. ${decodeURIComponent(q.question)}</div>
+            <div class="correction">
+                Your Answer: <span style="color: ${color};">${userAnswer}</span><br>
+                Correct Answer: <span style="color: green;">${correctAnswer}</span>
+            </div>
+            <hr>
         `;
     });
 
