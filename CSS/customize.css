@@ -87,7 +87,7 @@ h1 {
 
 }
 
-.card {
+.card-1 {
     width: 30%;
     height: 30vh;
     background-color: rgba(237, 242, 247, 0.429);
@@ -98,7 +98,7 @@ h1 {
     cursor: pointer;
 }
 
-.card:hover {
+.card-1:hover {
     transform: translateY(-10px);
     transition: 0.7s;
     
@@ -243,9 +243,7 @@ label{
     color: rgb(255, 255, 255);
     font-weight: bold;
     margin-left: 550px;
-    /* justify-content: end; */
-    /* align-self: flex-end; */
-    margin-right: 20px;
+    margin-top: -10px;
 }
 /* select option */
 select {
@@ -338,7 +336,7 @@ select:focus {
 
 
 /* style question */
-.question{
+ .card-body .card-text,.question{
     color: white;
     font-size: large;
 }
@@ -350,6 +348,7 @@ button {
     border: none;
     cursor: pointer;
     margin: 5px;
+    margin-top: 30px;
 }
 
 /* Style for Previous and Next buttons */
@@ -367,10 +366,11 @@ button {
 }
 
 /* Text review correction style */
-.review{
-    color:#fff;
-    background: none;
+.btn-review{
+    color:#003A67;
     font-size: larger;
+    border-radius: 5px;
+    background-color: #FFD000;
 }
 
 /* correction style */
@@ -378,4 +378,32 @@ button {
     color: white;
     padding: 20px;
     background-color: #001F3F;
+}
+
+.card{
+    width: 100%;
+    text-align: center;
+    background: none;
+}
+.card .btn{
+    margin:  0 auto;
+    padding: 10px;
+    margin-top: 10px;
+    width: 40%;
+    color: #001F3F;
+    border-radius: 5px;
+    background-color:white;
+}
+
+.card .btn:hover{
+    background-color: #FFD000;
+}
+
+.answers{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+input[type="radio"] {
+    display: none;
 }
