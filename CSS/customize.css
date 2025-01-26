@@ -316,12 +316,7 @@ select:focus {
 }
 
 
-#result{
-    text-align: center;
-    padding-top: 30px;
-    border-radius: 10px;
-    background-color:#00223C;
-}
+
 
 .show-result img{
     width: 40%;
