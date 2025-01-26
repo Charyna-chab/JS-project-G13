@@ -4,7 +4,7 @@ body{
     /* background:linear-gradient(#003A67,#0D66AC); */
     background-color: #003A67;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-family: Inria Sans;
+
     background: #003A67;
     height: auto;
 }
@@ -243,3 +243,124 @@ button i {
     cursor: pointer;
     color: #dc3545;
 }
+
+/* buger menu  */
+.burger-menu {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #FFD000;
+    cursor: pointer;
+    margin-left: auto;
+    background: wheat;
+}
+
+
+/* Base Styles (Default for laptops) */
+
+/* For Tablets (width between 768px and 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .nav-left,
+    .nav-right {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-right ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-right button {
+        margin: 10px 0;
+    }
+
+    main .content {
+        flex-direction: column;
+        margin: 30px 0;
+    }
+
+    main .content img {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    main .text {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    main .text p {
+        width: 100%;
+    }
+
+    .create-quiz {
+        width: 100%;
+        margin: 10px;
+        box-shadow: none;
+    }
+
+    .form-answer .fa-check-square-o,
+    .form-answer .material-icons {
+        margin: 0;
+    }
+}
+
+/* For Mobile Phones (width less than 768px) */
+
+/* Default (hidden menu for mobile) */
+.burger-menu {
+    display: none;
+    font-size: 24px;
+    background: red;
+    border: none;
+    color: #FFD000;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+/* For Mobile Phones (width less than 768px) */
+@media (max-width: 767px) {
+
+    .logo{
+        display: none;
+
+    }
+
+    .burger-menu {
+        display: block; /* Show burger menu */
+    }
+
+    .nav-right {
+        display: none; /* Hide menu initially */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #00223C;
+        padding: 10px 0;
+        gap: 10px;
+    }
+
+    .nav-right ul {
+        flex-direction: column;
+        gap: 10px;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-right li {
+        margin: 0;
+    }
+
+    .nav-right.show {
+        display: flex; /* Show menu when toggled */
+    }
+}
+

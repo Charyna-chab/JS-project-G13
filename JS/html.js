@@ -2,6 +2,9 @@ const startBtn = document.getElementById('start-btn');
 const quizContainer = document.getElementById('quiz-container');
 const quiz = document.getElementById('quiz');
 
+
+
+
 startBtn.addEventListener('click' , (e) =>{
     quizContainer.style.display = 'block';
     quiz.style.display = 'none';
@@ -134,6 +137,8 @@ function autoMoveNext() {
 function submitQuiz() {
     clearInterval(timer);
 
+
+
     let score = 0;
     questions.forEach((q, index) => {
         if (userAnswers[index] === decodeURIComponent(q.correct_answer)) {
@@ -149,6 +154,10 @@ function submitQuiz() {
 
 // Function to review answers after submission
 function reviewAnswers() {
+
+    const h1Html = document.querySelector('#h1html');
+    h1Html.display = "none";
+
     let reviewHTML = `<h2 class="text-center">Review Answers</h2>`;
 
     questions.forEach((q, index) => {
