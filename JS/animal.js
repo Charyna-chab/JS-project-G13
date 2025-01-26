@@ -59,7 +59,7 @@ function displayQuestion() {
     let questionHTML = `
         <div class="card">
             <div class="card-body">
-            <div class="timer my-3"><strong>Time Left: </strong> <span id="timer">${timeLeft}</span> seconds</div>
+                <div class="timer my-3"><strong>Time Left: </strong> <span id="timer">${timeLeft}</span> seconds</div>
                 <p class="card-text">${decodeURIComponent(q.question)}</p>
                 <div class="answers">
                     ${answers.map(answer => `
@@ -71,7 +71,6 @@ function displayQuestion() {
                         </label>
                     `).join("")}
                 </div>
-                
             </div>
         </div>
     `;
@@ -82,7 +81,7 @@ function displayQuestion() {
         <div class="mt-3 d-flex justify-content-between">
             <button class="prev-btn" onclick="prevQuestion()" ${currentQuestionIndex === 0 ? "disabled" : ""}>Previous</button>
             <button class="next-btn" onclick="nextQuestion()" ${currentQuestionIndex === questions.length - 1 ? "style='display:none;'" : ""}>Next</button>
-            <button id="submit-btn"" onclick="submitQuiz()" ${currentQuestionIndex === questions.length - 1 ? "" : "style='display:none;'"}>Submit</button>
+            <button id="submit-btn" onclick="submitQuiz()" ${currentQuestionIndex === questions.length - 1 ? "" : "style='display:none;'"}>Submit</button>
         </div>
     `;
 
@@ -99,10 +98,37 @@ function displayQuestion() {
     }, 1000);
 }
 
+
 // Function to save answer
+// function saveAnswer(index, answer) {
+//     userAnswers[index] = answer;
+// }
+
+// Function to save answer and provide immediate feedback
 function saveAnswer(index, answer) {
+    // Save the user's answer
     userAnswers[index] = answer;
+
+    let correctAnswer = decodeURIComponent(questions[index].correct_answer);
+    let answerInputs = document.querySelectorAll(`input[name="q${index}"]`);
+
+    // Iterate through all answer options
+    answerInputs.forEach(input => {
+        let parentLabel = input.parentNode;
+        input.disabled = true; // Disable all options
+        parentLabel.style.pointerEvents = "none"; // Prevent further clicks
+
+        // Highlight correct and incorrect answers
+        if (decodeURIComponent(input.value) === correctAnswer) {
+            parentLabel.style.backgroundColor = "green"; // Correct answer in green
+            parentLabel.style.color = "white"; // White text for visibility
+        } else if (decodeURIComponent(input.value) === answer) {
+            parentLabel.style.backgroundColor = "red"; // Selected incorrect answer in red
+            parentLabel.style.color = "white"; // White text for visibility
+        }
+    });
 }
+
 
 // Function for "Next" button
 function nextQuestion() {

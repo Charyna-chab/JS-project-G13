@@ -57,24 +57,23 @@ function displayQuestion() {
     let answers = [...q.incorrect_answers, q.correct_answer].sort(() => Math.random() - 0.5);
 
     let questionHTML = `
-        <div class="card">
-            <div class="card-body">
+    <div class="card">
+        <div class="card-body">
             <div class="timer my-3"><strong>Time Left: </strong> <span id="timer">${timeLeft}</span> seconds</div>
-                <p class="card-text">${decodeURIComponent(q.question)}</p>
-                <div class="answers">
-                    ${answers.map(answer => `
-                        <label class="btn">
-                            <input type="radio" name="q${currentQuestionIndex}" value="${decodeURIComponent(answer)}"
-                            ${userAnswers[currentQuestionIndex] === decodeURIComponent(answer) ? "checked" : ""} 
-                            onclick="saveAnswer(${currentQuestionIndex}, '${decodeURIComponent(answer)}')">
-                            ${decodeURIComponent(answer)}
-                        </label>
-                    `).join("")}
-                </div>
-                
+            <p class="card-text">${decodeURIComponent(q.question)}</p>
+            <div class="answers">
+                ${answers.map(answer => `
+                    <label class="btn">
+                        <input type="radio" name="q${currentQuestionIndex}" value="${decodeURIComponent(answer)}"
+                        ${userAnswers[currentQuestionIndex] === decodeURIComponent(answer) ? "checked" : ""} 
+                        onclick="saveAnswer(${currentQuestionIndex}, '${decodeURIComponent(answer)}')">
+                        ${decodeURIComponent(answer)}
+                    </label>
+                `).join("")}
             </div>
         </div>
-    `;
+    </div>
+`;
 
     quizContainer.innerHTML = questionHTML;
 
@@ -99,10 +98,40 @@ function displayQuestion() {
     }, 1000);
 }
 
+
+
 // Function to save answer
+// function saveAnswer(index, answer) {
+//     userAnswers[index] = answer;
+// }
+
+
+// Function to save answer and apply feedback
 function saveAnswer(index, answer) {
+    // If the answer is already selected, prevent changing it
+    if (userAnswers[index]) return;
+
     userAnswers[index] = answer;
+    let correctAnswer = decodeURIComponent(questions[index].correct_answer);
+
+    // Highlight answers and disable all inputs
+    let answerLabels = document.querySelectorAll(`input[name="q${index}"]`);
+    answerLabels.forEach(label => {
+        let parentLabel = label.parentNode;
+        label.disabled = true; // Disable input
+        parentLabel.style.pointerEvents = "none"; // Disable clicks
+
+        if (decodeURIComponent(label.value) === correctAnswer) {
+            parentLabel.style.backgroundColor = "green"; // Correct answer in green
+        } else if (decodeURIComponent(label.value) === answer) {
+            parentLabel.style.backgroundColor = "red"; // Selected incorrect answer in red
+        }
+    });
 }
+
+
+
+
 
 // Function for "Next" button
 function nextQuestion() {

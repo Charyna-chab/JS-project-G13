@@ -316,13 +316,13 @@ select:focus {
 
 #submit-btn{
        
-    width: 94%;
+    width: 15%;
     margin-bottom: 5px;
     font-weight: bold;
     margin: 0 auto;
     color: rgb(255, 255, 255);
     padding: 10px ;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: #003A67;
     margin: 20px;
 }
@@ -461,4 +461,49 @@ input[type="radio"] {
     margin-top: 15px;
     margin-bottom: 15px;
     border-radius: 5px;
+}
+
+
+/* css handle select answer */
+
+
+
+
+.answers .btn:hover {
+    background-color: #f4f4f4;
+}
+
+.answers .btn[style*="green"] {
+    background-color: green;
+    color: white;
+}
+
+.answers .btn[style*="red"] {
+    background-color: red;
+    color: white;
+}
+
+
+
+
+
+
+
+.answers .btn:hover {
+    background-color: #f4f4f4;
+}
+
+.answers .btn[style*="green"] {
+    background-color: green;
+    color: white;
+}
+
+.answers .btn[style*="red"] {
+    background-color: red;
+    color: white;
+}
+
+.answers .btn[disabled] {
+    pointer-events: none;
+    opacity: 0.6;
 }

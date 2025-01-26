@@ -62,19 +62,16 @@ function displayQuestion() {
     let questionHTML = `
         <div class="card">
             <div class="card-body">
-            <div class="timer my-3"><strong>Time Left: </strong> <span id="timer">${timeLeft}</span> seconds</div>
+                <div class="timer my-3"><strong>Time Left: </strong> <span id="timer">${timeLeft}</span> seconds</div>
                 <p class="card-text">${decodeURIComponent(q.question)}</p>
                 <div class="answers">
-                    ${answers.map(answer => `
-                        <label class="btn">
-                            <input type="radio" name="q${currentQuestionIndex}" value="${decodeURIComponent(answer)}"
-                            ${userAnswers[currentQuestionIndex] === decodeURIComponent(answer) ? "checked" : ""} 
-                            onclick="saveAnswer(${currentQuestionIndex}, '${decodeURIComponent(answer)}')">
+                    ${answers.map((answer, idx) => `
+                        <label class="btn" id="answer-${idx}" onclick="selectAnswer(${currentQuestionIndex}, '${decodeURIComponent(answer)}', ${idx})">
+                            <input type="radio" name="q${currentQuestionIndex}" value="${decodeURIComponent(answer)}" disabled="${userAnswers[currentQuestionIndex] ? true : false}">
                             ${decodeURIComponent(answer)}
                         </label>
                     `).join("")}
                 </div>
-                
             </div>
         </div>
     `;
@@ -85,10 +82,9 @@ function displayQuestion() {
         <div class="mt-3 d-flex justify-content-between">
             <button class="prev-btn" onclick="prevQuestion()" ${currentQuestionIndex === 0 ? "disabled" : ""}>Previous</button>
             <button class="next-btn" onclick="nextQuestion()" ${currentQuestionIndex === questions.length - 1 ? "style='display:none;'" : ""}>Next</button>
-            <button id="submit-btn"" onclick="submitQuiz()" ${currentQuestionIndex === questions.length - 1 ? "" : "style='display:none;'"}>Submit</button>
+            <button id="submit-btn" onclick="submitQuiz()" ${currentQuestionIndex === questions.length - 1 ? "" : "style='display:none;'"}>Submit</button>
         </div>
     `;
-
     quizContainer.innerHTML += buttonHTML;
 
     timer = setInterval(() => {
@@ -101,6 +97,39 @@ function displayQuestion() {
         }
     }, 1000);
 }
+
+
+
+// Function to handle answer selection
+function selectAnswer(index, answer, answerIndex) {
+    if (userAnswers[index]) return; // Prevent changing the answer after selecting once
+
+    userAnswers[index] = answer;
+
+    let correctAnswer = decodeURIComponent(questions[index].correct_answer);
+
+    // Highlight selected answer
+    let selectedAnswerElement = document.getElementById(`answer-${answerIndex}`);
+    if (answer === correctAnswer) {
+        selectedAnswerElement.style.backgroundColor = "green"; // Correct answer
+    } else {
+        selectedAnswerElement.style.backgroundColor = "red"; // Incorrect answer
+    }
+
+    // Disable all other answer options
+    let answerElements = document.querySelectorAll(`.answers label`);
+    answerElements.forEach(el => el.style.pointerEvents = "none");
+
+    // Disable input
+    let inputs = document.querySelectorAll(`input[name="q${index}"]`);
+    inputs.forEach(input => (input.disabled = true));
+}
+
+
+
+
+
+
 
 // Function to save answer
 function saveAnswer(index, answer) {
