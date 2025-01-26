@@ -11,22 +11,10 @@ body {
     display: flex;
     align-items: center;
     padding: 10px 30px;
-    background-color: #00223C;
-  
 }
-
 .nav-left {
-    width: 30%;
-}
-
-.nav-left .logo img {
-    height: 40px;
-}
-
-.nav-right {
     display: flex;
-    width: 70%;
-    justify-content: flex-end;
+    flex-direction: row;
     align-items: center;
 }
 
@@ -62,8 +50,8 @@ body {
 .nav-right button {
     padding: 8px 15px;
     margin: 0px 30px 0px 50px;
-    background-color: #FFD700;
-    color: #001F3F;
+    background: #FFD000;
+    color: #1b6ec1;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
@@ -96,6 +84,10 @@ h1 {
     color: white;
     border-radius: 10px;
     cursor: pointer;
+}
+.card-1 a{
+    color: white;
+    text-decoration: none;
 }
 
 .card-1:hover {
@@ -148,37 +140,19 @@ h1 {
     background-color: #FFD000;
 }
 
-.burger-menu {
-    display: none;
-    font-size: 24px;
-    background: red;
-    border: none;
-    color: #FFD000;
-    cursor: pointer;
-    margin-left: auto;
-}
-
-
-/* html 
-
-
-
-
-
-
-/*  css Quiz style */
-
-
-.difficulty{
-    width: 9%;
-    background-color: white;
+/* style for html quiz */
+.html-container{
+    width: 30%;
+    height: 40vh;
+    margin: auto;
+    padding: 10px;
     border-radius: 10px;
     background-color:rgba(237, 242, 247, 0.429) ;
 }
 /* label */
 label{
     display: block;
-    margin-left: 0px;
+    margin-top: 10px;
 }
 /*  Animal Quiz style */
 
@@ -192,18 +166,16 @@ label{
 }
 
 .difficulty {
-    width: 94%;
+    width: 100%;
     background-color: white;
     border-radius: 10px;
     padding: 10px;
-    margin-left: 20px;
-    margin: 10 auto;
+    margin: 0 auto;
     color:#003A67;
 }
 
 .option {
     margin: 20px;
-    margin: 0 auto;
 }
 
 .select{
@@ -249,8 +221,14 @@ label{
     border: none;
     width: 30%;
     padding: 10px;
-    margin: 0 auto;
-    color: black;
+    color: #003A67;
+    font-size: large;
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-left: 34.5%;
+    cursor: pointer;
+    background-color: #FFD000;
+
 }
 
 .timer{
@@ -268,6 +246,7 @@ select {
     border-radius: 5px;
     border: none;
     color: #003A67;
+    background: white;
     cursor: pointer;
 }
 select:focus {
@@ -283,10 +262,19 @@ select:focus {
     color: #fff;
     font-size: larger;
     border-radius: 10px;
+    background-color:rgba(237, 242, 247, 0.429) ;
+}
+.start-quiz button{
     padding: 10px;
-    margin: 0 auto;
+    border: none;
+    color: #003A67;
+    font-size: large;
     margin-top: 10px;
-    color: black;
+    border-radius: 5px;
+    margin-left: 50%;
+    cursor: pointer;
+    background-color: #FFD000;
+
 }
 
 .option {
@@ -330,7 +318,9 @@ select:focus {
 
 #result{
     text-align: center;
-    color: white;
+    padding-top: 30px;
+    border-radius: 10px;
+    background-color:#00223C;
 }
 
 .show-result img{
@@ -387,19 +377,11 @@ button {
     margin-top: 30px;
 }
 
-/* Style for Previous and Next buttons  */
-.prev-btn{
-    background-color: #FFD000;
-    color: #670000;
-    border-radius: 5px;
-    margin-left: 24px;
-}
-
-.next-btn {
+/* Style for Previous and Next buttons */
+.prev-btn, .next-btn {
     background-color: #FFD000;
     color: #003A67;
     border-radius: 5px;
-    width: 100px;
 }
 
 /* Score style */
