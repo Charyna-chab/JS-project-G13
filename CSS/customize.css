@@ -97,6 +97,10 @@ h1 {
     border-radius: 10px;
     cursor: pointer;
 }
+.card-1 a{
+    color: white;
+    text-decoration: none;
+}
 
 .card-1:hover {
     transform: translateY(-10px);
@@ -407,3 +411,5 @@ button {
 input[type="radio"] {
     display: none;
 }
+
+
