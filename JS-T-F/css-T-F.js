@@ -2,12 +2,11 @@ const startBtn = document.getElementById('start-btn');
 const quizContainer = document.getElementById('quiz-container');
 const quiz = document.getElementById('quiz');
 
+
 startBtn.addEventListener('click' , (e) =>{
     quizContainer.style.display = 'block';
     quiz.style.display = 'none';
 })
-
-
 
 let questions = [];
 let userAnswers = {};
@@ -23,14 +22,10 @@ function startQuiz() {
 
     let difficulty = document.getElementById("difficulty").value;
     let urls = {
-        easy: "https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple&encode=url3986",
-        medium: "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple&encode=url3986",
-        hard: "https://opentdb.com/api.php?amount=10&category=21&difficulty=hard&type=multiple&encode=url3986",
-        mixed: [
-            "https://opentdb.com/api.php?amount=4&category=27&difficulty=easy&type=multiple&encode=url3986",
-            "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple&encode=url3986",
-            "https://opentdb.com/api.php?amount=10&category=21&difficulty=hard&type=multiple&encode=url3986",
-        ]
+        easy: "https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=boolean&encode=url3986",
+        medium: "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=boolean&encode=url3986",
+        hard: "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=boolean&encode=url3986",
+      
     };
 
     let fetchUrls = difficulty === "mixed" ? urls.mixed : [urls[difficulty]];

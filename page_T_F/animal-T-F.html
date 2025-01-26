@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Quiz</title>
+    <link rel="stylesheet" href="/CSS/customize.css">
+    <script src="/JS-T-F/animal-T-F.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="animal" id="animalquiz">
+            <h1>ANIMALS Quiz</h1>
+            <div class="quiz" id="quiz">
+                 <!-- Difficulty Level Selection -->
+                <label for="difficulty" class="select">Select Difficulty:</label>
+                <select id="difficulty" class="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+                
+                <button onclick="startQuiz()"class="start-btn" id="start-btn">Start Quiz</button>
+                <a href="/customize.html"><button class="btn-back-animal">Back</button></a>
+            </div>
+           
+    
+            <!-- Quiz Questions Appear Here -->
+            <div id="quiz-container" style="display: none;"></div>
+    
+            <button onclick="submitQuiz()" id="submit-btn" style="display:none;">Submit</button>
+    
+            <h2 id="result"></h2>
+        </div>
+    </div>
+</body>
+</html>

@@ -33,21 +33,21 @@ html.addEventListener('click',(e) => {
     titleCategory.style.display = "none";
 })
 
-btnStart.addEventListener('click',(e) => {
-    quiz.style.display = 'block'
-    htmlContainer.style.display = 'none'
+// btnStart.addEventListener('click',(e) => {
+//     quiz.style.display = 'block'
+//     htmlContainer.style.display = 'none'
 
-})
+// })
 
-submitBtn.addEventListener('click',(e) => {
-    showResult.style.display = 'block';
-    quiz.style.display = 'none';
-})
+// submitBtn.addEventListener('click',(e) => {
+//     showResult.style.display = 'block';
+//     quiz.style.display = 'none';
+// })
 
-backBtn.addEventListener('click',(e) => {
-    subjects.style.display = 'block';
-    htmlQuiz.style.display = 'none';
-})
+// backBtn.addEventListener('click',(e) => {
+//     subjects.style.display = 'block';
+//     htmlQuiz.style.display = 'none';
+// })
 // funtion for quiz html and API
 let questions = [];
         let userAnswers = {};
