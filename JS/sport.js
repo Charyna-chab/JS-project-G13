@@ -100,12 +100,6 @@ function displayQuestion() {
 
 
 
-// Function to save answer
-// function saveAnswer(index, answer) {
-//     userAnswers[index] = answer;
-// }
-
-
 // Function to save answer and apply feedback
 function saveAnswer(index, answer) {
     // If the answer is already selected, prevent changing it
@@ -115,22 +109,19 @@ function saveAnswer(index, answer) {
     let correctAnswer = decodeURIComponent(questions[index].correct_answer);
 
     // Highlight answers and disable all inputs
-    let answerLabels = document.querySelectorAll(`input[name="q${index}"]`);
-    answerLabels.forEach(label => {
-        let parentLabel = label.parentNode;
-        label.disabled = true; // Disable input
+    let answerInputs = document.querySelectorAll(`input[name="q${index}"]`);
+    answerInputs.forEach(input => {
+        let parentLabel = input.parentNode;
+        input.disabled = true; // Disable input
         parentLabel.style.pointerEvents = "none"; // Disable clicks
 
-        if (decodeURIComponent(label.value) === correctAnswer) {
+        if (decodeURIComponent(input.value) === correctAnswer) {
             parentLabel.style.backgroundColor = "green"; // Correct answer in green
-        } else if (decodeURIComponent(label.value) === answer) {
+        } else if (decodeURIComponent(input.value) === answer) {
             parentLabel.style.backgroundColor = "red"; // Selected incorrect answer in red
         }
     });
 }
-
-
-
 
 
 // Function for "Next" button

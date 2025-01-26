@@ -167,6 +167,7 @@ label{
 
 .difficulty {
     width: 100%;
+
     background-color: white;
     border-radius: 10px;
     padding: 10px;
@@ -194,7 +195,7 @@ label{
     border-radius: 5px;
     border: none; 
     background-color: #FFD000;
-    margin: 20px;
+    /* margin: 20px; */
 }
 
 
@@ -317,7 +318,6 @@ select:focus {
 
 
 
-
 .show-result img{
     width: 40%;
     height: 25vh;
@@ -373,9 +373,17 @@ button {
 }
 
 /* Style for Previous and Next buttons */
-.prev-btn, .next-btn {
+.prev-btn{
+    background-color: #FFD000;
+    margin-left: 28px;
+    color: #003A67;
+    border-radius: 5px;
+}
+
+.next-btn {
     background-color: #FFD000;
     color: #003A67;
+    width: 100px;
     border-radius: 5px;
 }
 
@@ -446,7 +454,7 @@ input[type="radio"] {
 
 
 
-.answers .btn:hover {
+/* .answers .btn:hover {
     background-color: #f4f4f4;
 }
 
@@ -458,7 +466,7 @@ input[type="radio"] {
 .answers .btn[style*="red"] {
     background-color: red;
     color: white;
-}
+} */
 
 
 

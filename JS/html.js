@@ -26,10 +26,14 @@ function startQuiz() {
 
     let difficulty = document.getElementById("difficulty").value;
     let urls = {
-        easy: "https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple",
-        medium: "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple",
-        hard: "https://opentdb.com/api.php?amount=10&category=18&difficulty=hard&type=multiple",
-        
+        easy: "https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple&encode=url3986",
+        medium: "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple&encode=url3986",
+        hard: "https://opentdb.com/api.php?amount=10&category=21&difficulty=hard&type=multiple&encode=url3986",
+        mixed: [
+            "https://opentdb.com/api.php?amount=4&category=27&difficulty=easy&type=multiple&encode=url3986",
+            "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple&encode=url3986",
+            "https://opentdb.com/api.php?amount=10&category=21&difficulty=hard&type=multiple&encode=url3986",
+        ]
     };
 
     let fetchUrls = difficulty === "mixed" ? urls.mixed : [urls[difficulty]];
@@ -46,6 +50,7 @@ function startQuiz() {
         .catch(error => console.error("Error fetching questions:", error));
 }
 
+// Function to display questions in card format
 // Function to display questions in card format
 function displayQuestion() {
     clearInterval(timer);
@@ -66,8 +71,10 @@ function displayQuestion() {
                 <p class="card-text">${decodeURIComponent(q.question)}</p>
                 <div class="answers">
                     ${answers.map((answer, idx) => `
-                        <label class="btn" id="answer-${idx}" onclick="selectAnswer(${currentQuestionIndex}, '${decodeURIComponent(answer)}', ${idx})">
-                            <input type="radio" name="q${currentQuestionIndex}" value="${decodeURIComponent(answer)}" disabled="${userAnswers[currentQuestionIndex] ? true : false}">
+                        <label class="btn" id="answer-${idx}" style="pointer-events: ${userAnswers[currentQuestionIndex] ? 'none' : 'auto'}">
+                            <input type="radio" name="q${currentQuestionIndex}" value="${decodeURIComponent(answer)}" 
+                            ${userAnswers[currentQuestionIndex] ? "disabled" : ""} 
+                            onclick="saveAnswer(${currentQuestionIndex}, '${decodeURIComponent(answer)}', ${idx})">
                             ${decodeURIComponent(answer)}
                         </label>
                     `).join("")}
@@ -85,6 +92,7 @@ function displayQuestion() {
             <button id="submit-btn" onclick="submitQuiz()" ${currentQuestionIndex === questions.length - 1 ? "" : "style='display:none;'"}>Submit</button>
         </div>
     `;
+
     quizContainer.innerHTML += buttonHTML;
 
     timer = setInterval(() => {
@@ -98,10 +106,8 @@ function displayQuestion() {
     }, 1000);
 }
 
-
-
-// Function to handle answer selection
-function selectAnswer(index, answer, answerIndex) {
+// Function to save answer
+function saveAnswer(index, answer, answerIndex) {
     if (userAnswers[index]) return; // Prevent changing the answer after selecting once
 
     userAnswers[index] = answer;
@@ -114,27 +120,18 @@ function selectAnswer(index, answer, answerIndex) {
         selectedAnswerElement.style.backgroundColor = "green"; // Correct answer
     } else {
         selectedAnswerElement.style.backgroundColor = "red"; // Incorrect answer
+
+        // Highlight correct answer
+        let answers = [...questions[index].incorrect_answers, questions[index].correct_answer];
+        let correctAnswerIndex = answers.findIndex(a => decodeURIComponent(a) === correctAnswer);
+        document.getElementById(`answer-${correctAnswerIndex}`).style.backgroundColor = "green";
     }
 
-    // Disable all other answer options
+    // Disable all answer options
     let answerElements = document.querySelectorAll(`.answers label`);
     answerElements.forEach(el => el.style.pointerEvents = "none");
-
-    // Disable input
-    let inputs = document.querySelectorAll(`input[name="q${index}"]`);
-    inputs.forEach(input => (input.disabled = true));
 }
 
-
-
-
-
-
-
-// Function to save answer
-function saveAnswer(index, answer) {
-    userAnswers[index] = answer;
-}
 
 // Function for "Next" button
 function nextQuestion() {

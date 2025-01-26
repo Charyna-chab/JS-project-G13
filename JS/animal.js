@@ -129,6 +129,9 @@ function saveAnswer(index, answer) {
     });
 }
 
+// Function to save answer
+
+
 
 // Function for "Next" button
 function nextQuestion() {
