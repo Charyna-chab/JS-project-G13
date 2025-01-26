@@ -26,11 +26,7 @@ function startQuiz() {
         easy: "https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple&encode=url3986",
         medium: "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple&encode=url3986",
         hard: "https://opentdb.com/api.php?amount=10&category=21&difficulty=hard&type=multiple&encode=url3986",
-        mixed: [
-            "https://opentdb.com/api.php?amount=4&category=27&difficulty=easy&type=multiple&encode=url3986",
-            "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple&encode=url3986",
-            "https://opentdb.com/api.php?amount=10&category=21&difficulty=hard&type=multiple&encode=url3986",
-        ]
+        
     };
 
     let fetchUrls = difficulty === "mixed" ? urls.mixed : [urls[difficulty]];
