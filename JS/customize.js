@@ -81,11 +81,7 @@ let questions = [];
                 easy: "https://the-trivia-api.com/api/questions?categories=technology&limit=5&difficulty=easy",
                 medium: "https://the-trivia-api.com/api/questions?categories=technology&limit=5&difficulty=medium",
                 hard: "https://the-trivia-api.com/api/questions?categories=technology&limit=5&difficulty=hard",
-                mixed: [
-                    "https://the-trivia-api.com/api/questions?categories=technology&limit=2&difficulty=easy",
-                    "https://the-trivia-api.com/api/questions?categories=technology&limit=2&difficulty=medium",
-                    "https://the-trivia-api.com/api/questions?categories=technology&limit=2&difficulty=hard"
-                ]
+               
             };
 
             let fetchUrls = difficulty === "mixed" ? urls.mixed : [urls[difficulty]];
