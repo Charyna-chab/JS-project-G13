@@ -23,9 +23,9 @@ function startQuiz() {
 
     let difficulty = document.getElementById("difficulty").value;
     let urls = {
-        easy: "https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple&encode=url3986",
-        medium: "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple&encode=url3986",
-        hard: "https://opentdb.com/api.php?amount=10&category=21&difficulty=hard&type=multiple&encode=url3986",
+        easy: "https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple",
+        medium: "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple",
+        hard: "https://opentdb.com/api.php?amount=10&category=18&difficulty=hard&type=multiple",
         
     };
 
