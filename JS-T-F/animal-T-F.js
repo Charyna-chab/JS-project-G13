@@ -98,10 +98,37 @@ function displayQuestion() {
     }, 1000);
 }
 
-// Function to save answer
 function saveAnswer(index, answer) {
+    // Save the user's answer
     userAnswers[index] = answer;
+
+    let correctAnswer = decodeURIComponent(questions[index].correct_answer);
+    let answerInputs = document.querySelectorAll(`input[name="q${index}"]`);
+
+    // Iterate through all answer options
+    answerInputs.forEach(input => {
+        let parentLabel = input.parentNode;
+        input.disabled = true; // Disable all options
+        parentLabel.style.pointerEvents = "none"; // Prevent further clicks
+
+        // Highlight correct and incorrect answers
+        if (decodeURIComponent(input.value) === correctAnswer) {
+            parentLabel.style.backgroundColor = "green"; // Correct answer in green
+            parentLabel.style.color = "white"; // White text for visibility
+        } else if (decodeURIComponent(input.value) === answer) {
+            parentLabel.style.backgroundColor = "red"; // Selected incorrect answer in red
+            parentLabel.style.color = "white"; // White text for visibility
+        }
+    });
 }
+
+
+
+
+
+
+
+// Function to save answer
 
 // Function for "Next" button
 function nextQuestion() {
