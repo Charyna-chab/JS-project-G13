@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    /* background:linear-gradient(#003A67,#0D66AC); */
     background-color: #003A67;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -11,82 +10,54 @@ body {
     display: flex;
     align-items: center;
     padding: 10px 30px;
-    background-color: #00223C;
-  
 }
-
 .nav-left {
-    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
-
 .nav-left .logo img {
-    height: 40px;
+    height: 80px;
 }
-
-.nav-right {
-    display: flex;
-    width: 70%;
-    justify-content: flex-end;
-    align-items: center;
+.logo img {
+    height: 80px;
 }
-
-.nav-right ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-right li {
-    margin: 0 15px;
-}
-
-.nav-right li a {
-    text-decoration: none;
-    color: #FFD000;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    gap: 50px;
-}
-
-.nav-right li a i {
-    margin-right: 8px;
-}
-
-.nav-right li a.active {
-    color: white;
-}
-
-.nav-right button {
-    padding: 8px 15px;
+#btn-back {
+    padding: 15px 40px;
     margin: 0px 30px 0px 50px;
-    background-color: #FFD700;
-    color: #001F3F;
+    background: #FFD000;
+    color: #1b6ec1;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
+    display: flex;
+    cursor: pointer;
+    margin-left: 1100px;
 }
+#btn-back:hover {
+    color: white;
+    position: relative;
+    transition: transform 0.2s;
+    transform: translateY(-10px);
+}
+
+
 /* Create card category */
 .container {
-    margin-top: 10%;
+   margin-top: 5%;
 }
-
 h1 {
     text-align: center;
+    font-weight: bold;
     color: white;
+    padding-bottom: 20px;
 }
-
 .content {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-
-
 }
-
 .card-1 {
     width: 30%;
     height: 30vh;
@@ -97,11 +68,9 @@ h1 {
     border-radius: 10px;
     cursor: pointer;
 }
-
 .card-1:hover {
     transform: translateY(-10px);
-    transition: 0.7s;
-    
+    transition: 0.7s; 
 }
 /* create card subject for choose */
 .subjects{
@@ -113,16 +82,13 @@ h1 {
     display: flex;
     justify-content: center;
 }
-
 .card-subject {
     width: 30%;
     height: 50vh;
     /* padding-bottom: 10px; */
     border-radius: 10px;
     background-color: rgba(237, 242, 247, 0.429);
-
 }
-
 .card-subject h2 a{
     text-decoration: none;
 }
