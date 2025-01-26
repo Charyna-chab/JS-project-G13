@@ -87,7 +87,7 @@ h1 {
 
 }
 
-.card {
+.card-1 {
     width: 30%;
     height: 30vh;
     background-color: rgba(237, 242, 247, 0.429);
@@ -98,7 +98,7 @@ h1 {
     cursor: pointer;
 }
 
-.card:hover {
+.card-1:hover {
     transform: translateY(-10px);
     transition: 0.7s;
     
@@ -148,9 +148,18 @@ h1 {
     background-color: #FFD000;
 }
 
-/* html 
-here
+.burger-menu {
+    display: none;
+    font-size: 24px;
+    background: red;
+    border: none;
+    color: #FFD000;
+    cursor: pointer;
+    margin-left: auto;
+}
 
+
+/* html 
 
 
 
@@ -159,25 +168,9 @@ here
 
 /*  css Quiz style */
 
-.css {
-    background-image: linear-gradient(to right, rgb(104, 103, 64), rgb(90, 90, 78));
-    width: 50%;
-    margin: 0 auto;
-    border-radius: 20px;
-    padding: 15px;
-}
-
-.html {
-    background-image: linear-gradient(to right, rgb(104, 103, 64), rgb(90, 90, 78));
-    width: 50%;
-    margin: 0 auto;
-    border-radius: 20px;
-    padding: 15px;
-}
-
 
 .difficulty{
-    width: 95%;
+    width: 9%;
     background-color: white;
     border-radius: 10px;
     background-color:rgba(237, 242, 247, 0.429) ;
@@ -185,7 +178,7 @@ here
 /* label */
 label{
     display: block;
-    margin-top: 10px;
+    margin-left: 0px;
 }
 /*  Animal Quiz style */
 
@@ -199,16 +192,18 @@ label{
 }
 
 .difficulty {
-    width: 100%;
+    width: 94%;
     background-color: white;
     border-radius: 10px;
     padding: 10px;
-    margin: 0 auto;
+    margin-left: 20px;
+    margin: 10 auto;
     color:#003A67;
 }
 
 .option {
     margin: 20px;
+    margin: 0 auto;
 }
 
 .select{
@@ -262,9 +257,7 @@ label{
     color: rgb(255, 255, 255);
     font-weight: bold;
     margin-left: 550px;
-    /* justify-content: end; */
-    /* align-self: flex-end; */
-    margin-right: 20px;
+    margin-top: -10px;
 }
 /* select option */
 select {
@@ -275,7 +268,6 @@ select {
     border-radius: 5px;
     border: none;
     color: #003A67;
-    background: white;
     cursor: pointer;
 }
 select:focus {
@@ -308,16 +300,7 @@ select:focus {
     color: white;
 }
 
-#start-btn{
-       
-    width: 13%;
-    margin-bottom: 5px;
-    color: black;
-    padding: 10px ;
-    border-radius: 10px;
-    background-color: rgb(242, 0, 0);
-    margin: 20px;
-}
+
 
 #starthtml{
        
@@ -389,7 +372,7 @@ select:focus {
 
 
 /* style question */
-.question{
+ .card-body .card-text,.question{
     color: white;
     font-size: large;
 }
@@ -401,13 +384,22 @@ button {
     border: none;
     cursor: pointer;
     margin: 5px;
+    margin-top: 30px;
 }
 
-/* Style for Previous and Next buttons */
-.prev-btn, .next-btn {
+/* Style for Previous and Next buttons  */
+.prev-btn{
+    background-color: #FFD000;
+    color: #670000;
+    border-radius: 5px;
+    margin-left: 24px;
+}
+
+.next-btn {
     background-color: #FFD000;
     color: #003A67;
     border-radius: 5px;
+    width: 100px;
 }
 
 /* Score style */
@@ -418,10 +410,11 @@ button {
 }
 
 /* Text review correction style */
-.review{
-    color:#fff;
-    background: none;
+.btn-review{
+    color:#003A67;
     font-size: larger;
+    border-radius: 5px;
+    background-color: #FFD000;
 }
 
 /* correction style */
@@ -431,14 +424,41 @@ button {
     background-color: #001F3F;
 }
 
-.timer{
-    color: rgb(255, 255, 255);
-    margin: 20px;
-    font-weight: bold;
-    display: flex;
-    margin-left: 600px;
-    /* justify-content: end; */
-    /* align-self: flex-end; */
-    margin-right: 20px;
-    
+.card{
+    width: 100%;
+    text-align: center;
+    background: none;
+}
+.card .btn{
+    margin:  0 auto;
+    padding: 10px;
+    margin-top: 10px;
+    width: 40%;
+    color: #001F3F;
+    border-radius: 5px;
+    background-color:white;
+}
+
+.card .btn:hover{
+    background-color: #FFD000;
+}
+
+.answers{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+input[type="radio"] {
+    display: none;
+}
+
+
+.card-text{
+    background-color: rgb(17, 128, 0);
+    padding: 10px;
+    width: 91%;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
 }
