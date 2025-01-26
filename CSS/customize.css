@@ -6,56 +6,6 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-/* create navbar  */
-.navbar {
-    display: flex;
-    align-items: center;
-    padding: 10px 30px;
-}
-.nav-left {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.nav-right ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-right li {
-    margin: 0 15px;
-}
-
-.nav-right li a {
-    text-decoration: none;
-    color: #FFD000;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    gap: 50px;
-}
-
-.nav-right li a i {
-    margin-right: 8px;
-}
-
-.nav-right li a.active {
-    color: white;
-}
-
-.nav-right button {
-    padding: 8px 15px;
-    margin: 0px 30px 0px 50px;
-    background: #FFD000;
-    color: #1b6ec1;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-}
 /* Create card category */
 .container {
     margin-top: 10%;
@@ -98,6 +48,7 @@ h1 {
 /* create card subject for choose */
 .subjects{
     text-align: center;    
+    margin-top: -40px;
 }
 .card-type{
     gap: 50px;
@@ -130,7 +81,9 @@ h1 {
 .back{
     width: 10%;
     height: 5vh;
+    padding: 5px;
     margin-top: 10px;
+    margin-bottom: 10px;
     margin-left: -53%;
     font-size: larger;
     border: none;
@@ -315,7 +268,6 @@ select:focus {
     background-color: #003A67;
     margin: 20px;
 }
-
 
 
 .show-result img{
